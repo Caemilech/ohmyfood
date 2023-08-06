@@ -1,0 +1,35 @@
+@mixin footer{
+    grid-gap: 22px;
+
+    padding: 22px 25px 22px 25px;
+    
+    background-color: $background-color-footer;
+}
+
+@mixin img__footer{
+    padding-top: 6px;
+}
+
+@mixin grid__footer{
+    grid-auto-rows: 19px;
+
+    grid-gap: 7px;
+
+    color: $background-color-first;
+}
+
+@mixin icon-text__grid__footer{
+    align-items: $align_center;
+
+    text-indent: 22px;
+}
+
+@mixin img__grid__footer{
+    position: $position-absolute;
+
+    padding-top: 2px;
+}
+
+@mixin text__grid__footer{
+    align-items: $align_center;
+} 

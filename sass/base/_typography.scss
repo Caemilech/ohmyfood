@@ -1,0 +1,8 @@
+@mixin typography{
+    font-family: "Roboto", sans-serif;
+}
+
+@mixin links{
+    color: $background-color-first;
+    text-decoration: none;
+}

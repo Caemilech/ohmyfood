@@ -1,0 +1,32 @@
+@mixin principale__section{
+    padding: 0px 13px 0px 13px;
+
+    background-color: $background-color-secondary;
+}
+
+@mixin space__principale__section{
+    padding-bottom: 40px;
+}
+
+@mixin title__section__principale{
+    border-bottom: 3px solid $color-menu-title;
+
+    width: 40px;
+}
+
+
+@mixin menu__section__principale{
+    flex-direction: $flex-column;
+
+    border-radius: 15px;
+    
+    box-shadow: $box-shadow2;
+
+    background-color: $background-color-first;
+}
+
+@mixin price{
+    grid-template-columns: 1fr 34px;
+
+    padding: 0px 15px 15px 15px;
+}

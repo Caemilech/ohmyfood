@@ -1,0 +1,18 @@
+@mixin location{
+    gap: 17px;
+
+    align-items: $align_center;
+
+    height: 50px;
+
+    background-color: $background-color-location;
+}
+
+@mixin search__location{
+    width: 109px;
+    height: 19px;
+
+    border: $border-none;
+
+    background-color: $background-color-location;
+}

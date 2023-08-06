@@ -1,0 +1,51 @@
+@mixin restaurants{
+    padding: 54px 18px 66px 17px;
+
+    background-color: $background-color-secondary;  
+}
+
+@mixin grid__restaurants{
+    grid-gap: 18px;
+}
+
+@mixin new__grid__restaurants{
+    position: $position-absolute;
+
+    right: 12px;
+
+    padding: 7px 10px 6px 9px;
+   
+    border-radius: 2px;
+    
+    color: $color-restaurants_grid_new;
+    
+    background-color: $background-color-restaurants_grid_new;
+
+    box-shadow: $box-shadow1;
+}
+
+@mixin img__grid__restaurants{
+    height: 176px;
+
+    border-radius: 15px 15px 0px 0px;    
+}
+
+@mixin links__grid__restaurants{
+    position: $position-relative;
+
+    color: $color-links;
+}
+
+@mixin container__grid__restaurants{
+    flex-direction: $flex-column;
+
+    gap: 5px;
+    
+    position: $position-relative;
+
+    background-color: $background-color-first;
+    
+    border-radius: 0px 0px 15px 15px;  
+
+    box-shadow: $box-shadow2;  
+}

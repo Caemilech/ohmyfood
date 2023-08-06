@@ -1,0 +1,19 @@
+@mixin homepage__header {
+    padding: 14px 89px 13px 89px;
+    box-shadow: $box-shadow1;   
+}
+
+@mixin header{
+    margin: 14px 0px 13px 0px;
+
+    grid-template-columns: 89px 1fr;
+
+    grid-template-rows: 36px;
+
+    align-items: $align_center;
+}
+
+@mixin img__header{
+    padding-left: 17px;
+}
+

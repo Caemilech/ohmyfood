@@ -1,0 +1,20 @@
+@mixin flex{
+    display: flex;
+}
+
+@mixin flex__center{
+    display: flex;
+    justify-content: center;
+}
+
+@mixin grid{
+    display: grid;
+}
+
+@mixin img{
+    width: 100%;
+
+    object-fit: cover;
+    
+    object-position: center;
+}

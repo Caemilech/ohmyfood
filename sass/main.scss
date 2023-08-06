@@ -1,0 +1,242 @@
+@import "base/typography";
+@import "base/reset";
+@import "components/button";
+@import "layout/header";
+@import "layout/footer";
+@import "pages/homepage/section_location";
+@import "pages/homepage/section_exploration";
+@import "pages/homepage/section_fonctionnement";
+@import "pages/homepage/section_restaurants";
+@import "pages/menu/_section__principale";
+@import "utils/mixin";
+@import "utils/variables";
+
+/* Général */
+
+body{
+    @include margin;
+    @include typography;
+}
+
+a{
+    @include links;  
+}
+
+/* Page d'acceuil */
+
+/* Header */
+
+.header__homepage{
+    @include flex__center;
+    @include homepage__header;
+}
+
+/* Section Location */
+
+.location{
+    @include flex__center;
+    @include location;
+    
+    &__search input[type=text]{
+        @include search__location
+    }
+}
+
+/* Section Exploration */
+
+.exploration{
+    @include flex__center;
+    @include exploration;
+
+    & > h1{
+        margin: 0;
+    }
+    
+    & > p{
+        margin-bottom: 26px ;
+    }
+
+    &__button{
+        @include flex__center;
+        @include button;
+        @include button__exploration;
+    }
+
+    .exploration__button:hover{
+        opacity: 0.8;
+        color: $background-color-first;
+    }
+}
+
+/* Section Fonctionnement*/
+
+.fonctionnement{
+    @include fonctionnement;
+
+    & > h2{
+        margin-bottom: 26px;
+    }
+
+    &__grid{
+        @include grid;
+        @include grid__fonctionnement;
+
+        &__img{
+            @include img__grid__fonctionnement;
+
+            &__number{
+                @include number__img__grid__fonctionnement;
+            }
+        }
+
+        &__container{
+            @include grid;
+            @include container__grid__fonctionnement;
+            
+            &__img{
+                @include img__container__grid__fonctionnement;
+            }
+        }
+    }
+}  
+
+/* Section Restaurants */
+
+.restaurants{
+    @include restaurants;
+        
+    & > h2{
+        height: 48px;
+        margin: 0px 80px 0px 3px;
+    }
+
+    &__grid{
+        @include grid__restaurants;
+        @include grid;
+
+        &__new{
+            @include new__grid__restaurants;
+        }
+
+        &__img{
+            @include img;
+            @include img__grid__restaurants;
+        }      
+        
+        &__links{
+            @include links__grid__restaurants
+        }
+
+        &__container {
+            @include flex;
+            @include container__grid__restaurants;
+            
+            &>h3 {
+                margin: 16px 60px 0px 13px;
+            }
+            
+            &>p {
+                margin: 0px 60px 12px 13px;
+            }
+            
+            .fa-heart{
+                position: absolute;
+                padding-top: 23px;
+                right: 24px;
+            }
+
+            .fa-heart__full{
+                opacity: 0;
+                color: blue;
+            }
+
+            .fa-heart__full:hover{
+                opacity: 1;
+            }           
+        }            
+    }
+}
+
+/* Section Footer */
+
+.footer{
+    @include grid;
+    @include footer;
+
+    &__img{
+        @include img__footer;
+    }
+
+    &__grid{
+        @include grid;
+        @include grid__footer;
+
+        &__icon-text{
+            @include flex;
+            @include icon-text__grid__footer;
+        }
+
+        &__img{
+            @include img__grid__footer;
+        }
+
+        &__text{
+            @include flex;
+        }
+    }
+}
+
+/* Page 1 */
+
+/* Header */
+
+.header{
+    @include grid;
+    @include header;
+
+    &__img{
+        @include img__header;
+    }
+}
+
+/* Main */
+
+.main__img{
+    @include img;
+    height: 275px;
+}
+
+/* Section Principale */
+
+.section__principale{
+    @include principale__section;
+
+    &__space{
+        @include space__principale__section;
+    }
+
+    &__title{
+        @include title__section__principale;
+    }
+
+    &__menu{
+        @include flex;
+        @include menu__section__principale;
+    }
+
+    article>h3 {
+        margin: 15px 15px 5px 15px;
+    }
+
+    .price {
+        @include grid;
+        @include price;
+    }
+
+   
+
+        
+   
+    
+   
+}
