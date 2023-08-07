@@ -1,0 +1,14 @@
+@mixin heart{
+    position: $position-absolute;
+    right: 24px;
+}
+
+@mixin heart__homepage{   
+    padding-top: 23px;
+}
+
+@mixin heart__full{  
+    opacity: 0;
+
+    color: blue;
+}

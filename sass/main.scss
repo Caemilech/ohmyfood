@@ -1,6 +1,7 @@
 @import "base/typography";
 @import "base/reset";
 @import "components/button";
+@import "components/heart";
 @import "layout/header";
 @import "layout/footer";
 @import "pages/homepage/section_location";
@@ -21,6 +22,36 @@ body{
 a{
     @include links;  
 }
+
+/* Animation Coeur */
+
+.fa-heart__homepage{
+    @include heart;
+    @include heart__homepage;
+}
+
+.fa-heart__full__homepage{
+    @include heart;
+    @include heart__homepage;
+    @include heart__full;
+}
+
+.fa-heart__full__homepage:hover{
+    opacity: 1;
+}    
+
+.fa-heart__menu{
+    @include heart;
+}
+
+.fa-heart__full{
+    @include heart;
+    @include heart__full;
+}
+
+.fa-heart__full:hover{
+    opacity: 1;
+}    
 
 /* Page d'acceuil */
 
@@ -137,22 +168,7 @@ a{
             
             &>p {
                 margin: 0px 60px 12px 13px;
-            }
-            
-            .fa-heart{
-                position: absolute;
-                padding-top: 23px;
-                right: 24px;
-            }
-
-            .fa-heart__full{
-                opacity: 0;
-                color: blue;
-            }
-
-            .fa-heart__full:hover{
-                opacity: 1;
-            }           
+            }                              
         }            
     }
 }
@@ -203,20 +219,30 @@ a{
 
 .main__img{
     @include img;
-    height: 275px;
+    @include img__main;
 }
 
 /* Section Principale */
 
 .section__principale{
     @include principale__section;
-
+    
     &__space{
-        @include space__principale__section;
+        @include space__section__principale;
+    }
+
+    &__header{
+        @include flex;
+        @include header__section__principale;           
     }
 
     &__title{
         @include title__section__principale;
+    }
+
+    &__cards{
+        @include grid;
+        @include cards__section__principale;
     }
 
     &__menu{

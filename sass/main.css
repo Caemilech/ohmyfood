@@ -10,6 +10,41 @@ a {
   text-decoration: none;
 }
 
+/* Animation Coeur */
+.fa-heart__homepage {
+  position: absolute;
+  right: 24px;
+  padding-top: 23px;
+}
+
+.fa-heart__full__homepage {
+  position: absolute;
+  right: 24px;
+  padding-top: 23px;
+  opacity: 0;
+  color: blue;
+}
+
+.fa-heart__full__homepage:hover {
+  opacity: 1;
+}
+
+.fa-heart__menu {
+  position: absolute;
+  right: 24px;
+}
+
+.fa-heart__full {
+  position: absolute;
+  right: 24px;
+  opacity: 0;
+  color: blue;
+}
+
+.fa-heart__full:hover {
+  opacity: 1;
+}
+
 /* Page d'acceuil */
 /* Header */
 .header__homepage {
@@ -153,18 +188,6 @@ a {
 .restaurants__grid__container > p {
   margin: 0px 60px 12px 13px;
 }
-.restaurants__grid__container .fa-heart {
-  position: absolute;
-  padding-top: 23px;
-  right: 24px;
-}
-.restaurants__grid__container .fa-heart__full {
-  opacity: 0;
-  color: blue;
-}
-.restaurants__grid__container .fa-heart__full:hover {
-  opacity: 1;
-}
 
 /* Section Footer */
 .footer {
@@ -220,15 +243,25 @@ a {
 
 /* Section Principale */
 .section__principale {
+  border-radius: 40px 40px 0px 0px;
   padding: 0px 13px 0px 13px;
   background-color: #F6F6F6;
 }
 .section__principale__space {
   padding-bottom: 40px;
 }
+.section__principale__header {
+  display: flex;
+  align-items: center;
+  padding: 32px 0px 40px 0px;
+}
 .section__principale__title {
   border-bottom: 3px solid #99E2D0;
   width: 40px;
+}
+.section__principale__cards {
+  display: grid;
+  gap: 12px;
 }
 .section__principale__menu {
   display: flex;
