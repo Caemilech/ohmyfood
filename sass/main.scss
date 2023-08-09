@@ -259,10 +259,79 @@ a{
         @include price;
     }
 
-   
-
-        
-   
-    
-   
+    .price > p{
+        margin: 0;
+    }     
 }
+
+.section__principale__button{
+    @include flex__center;
+    @include button;
+    @include button__section__principale;
+}
+
+@media (min-width: 1024px){     
+
+    .header__homepage{
+        padding: 30px 0px 32px 0px;
+    }
+}
+
+@media (min-width: 1024px){     
+
+    .exploration{
+        gap: 18px;
+
+        padding-top: 30px;
+    }
+
+    .exploration__button{
+        margin-bottom: 30px;
+    }
+}
+
+/* Responsive Section Fonctionnement */
+
+@media (min-width: 1024px){   
+    
+    .fonctionnement{
+        margin: 50px 0px 50px 0px;
+    }
+
+    .fonctionnement__grid{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Responsive Section Restaurants */
+
+@media (min-width: 1024px){     
+
+    .restaurants{
+        padding: 30px 0px 30px 0px;
+    }
+
+    .restaurants__grid{
+        grid-template-columns: 1fr 1fr;
+
+        grid-gap: 50px 100px;
+    }
+}
+
+/* Responsive Section Footer */
+
+@media (min-width: 1024px){    
+    
+    .footer__img__responsive{
+        @include grid;
+        grid-row-start: 1;
+        grid-column-end: 3;
+        
+    }
+
+    .footer__grid{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+       
+    }
+}
+
