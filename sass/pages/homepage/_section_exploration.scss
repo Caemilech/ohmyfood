@@ -1,9 +1,7 @@
-@mixin exploration{
-    flex-direction: $flex-column;
+@mixin exploration{       
+    grid-gap: 27px;
     
-    gap: 8px;
-    
-    padding-top: 38px;
+    padding: 39px 20px 57px 20px;
 
     text-align: center;
 
@@ -12,10 +10,14 @@
     background-color: $background-color-secondary;    
 }
 
+@mixin text__exploration{
+    grid-gap: 5px;
+}
+
 @mixin button__exploration{
     width: 218px;
 
     height: 50px;
 
-    margin-bottom: 57px;
+    margin: $margin-auto;
 }

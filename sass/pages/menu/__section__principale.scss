@@ -5,7 +5,7 @@
 @mixin principale__section{
     border-radius: 40px 40px 0px 0px;
 
-    padding: 0px 13px 0px 13px;
+    padding: 40px 13px 0px 13px;
 
     background-color: $background-color-secondary;
 
@@ -14,14 +14,14 @@
     top: -60px;
 }
 
-@mixin space__section__principale{
-    padding-bottom: 40px;
-}
-
 @mixin header__section__principale{
     align-items: $align_center;
 
-    padding: 40px 0px 40px 0px;     
+    padding-bottom: 40px;
+}
+
+@mixin grid__section__principale{
+    grid-gap: 40px;
 }
 
 @mixin title__section__principale{
@@ -29,7 +29,7 @@
 
     width: 40px;
 
-    margin: 0px 0px 12px 0px;
+    margin-bottom: 12px;
 }
 
 @mixin cards__section__principale{
@@ -37,19 +37,26 @@
 }
 
 @mixin menu__section__principale{
-    flex-direction: $flex-column;
+    padding: 15px;
+
+    grid-gap: 5px;
 
     border-radius: 15px;
     
     box-shadow: $box-shadow2;
 
     background-color: $background-color-first;
+
 }
 
 @mixin price{
-    grid-template-columns: 1fr 34px;
+    grid-row-start: 1;
+    
+    grid-column-end: 3;
 
-    padding: 0px 15px 15px 15px;
+    justify-content: end;
+
+    align-items: end;
 }
 
 @mixin button__section__principale{
@@ -57,5 +64,7 @@
 
     height: 50px;
     
-    margin: 0 auto;
+    margin: $margin-auto;
+
+    align-items: $align_center;
 }

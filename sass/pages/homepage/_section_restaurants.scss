@@ -1,7 +1,9 @@
 @mixin restaurants{
-    padding: 54px 18px 66px 17px;
+    padding: 54px 18px 66px 18px;
 
     background-color: $background-color-secondary;  
+
+    grid-gap: 20px;
 }
 
 @mixin grid__restaurants{
@@ -11,7 +13,9 @@
 @mixin new__grid__restaurants{
     position: $position-absolute;
 
-    right: 12px;
+    top: -146px;
+
+    right: 20px;
 
     padding: 7px 10px 6px 9px;
    
@@ -36,16 +40,18 @@
     color: $color-links;
 }
 
-@mixin container__grid__restaurants{
-    flex-direction: $flex-column;
-
-    gap: 5px;
-    
+@mixin container__grid__restaurants{   
     position: $position-relative;
 
     background-color: $background-color-first;
     
-    border-radius: 0px 0px 15px 15px;  
+    border-radius: 15px 15px 15px 15px;  
 
     box-shadow: $box-shadow2;  
+}
+
+@mixin text___grid__restaurants{
+    padding: 10px 60px 12px 13px;
+
+    grid-gap: 5px;
 }

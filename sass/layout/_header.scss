@@ -1,20 +1,24 @@
-@mixin homepage__header {
-    padding: 14px 89px 13px 89px;
-    box-shadow: $box-shadow1;   
+@mixin header{
+    grid-auto-rows: 63px;
+
+    box-shadow: $box-shadow1;  
+    
+    align-items: $align_center;
 }
 
-@mixin header{
-    margin: 14px 0px 13px 0px;
+@mixin homepage__header{
+    grid-template-columns: 1fr ;
 
-    grid-template-columns: 89px 1fr;
+    padding: 0px 89px 0px 89px;
+}
 
-    grid-template-rows: 36px;
-
-    align-items: $align_center;
+@mixin menu__header{
+    grid-template-columns: 89px 1fr;    
 }
 
 @mixin img__header{
     padding-left: 17px;
-    margin: 0 auto;
 }
+
+
 

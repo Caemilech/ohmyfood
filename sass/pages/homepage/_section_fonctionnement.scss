@@ -1,5 +1,7 @@
 @mixin fonctionnement{
     margin: 48px 20px 68px 20px;
+
+    grid-gap: 20px;
 }
 
 @mixin grid__fonctionnement{
@@ -7,36 +9,31 @@
 }
 
 @mixin img__grid__fonctionnement{
-    position: $position-absolute;
-
-    padding-top: 27px;  
+    position: $position-relative;
 }
 
-@mixin number__img__grid__fonctionnement{
+@mixin number__grid__fonctionnement{
     position: $position-absolute;
 
-    padding: 15px 0px 0px 8px;
-
-    color: $background-color-first;
+    top: 24px;    
 }
 
 @mixin container__grid__fonctionnement{
-    height: 73px;
+    grid-template-columns: 70px 1fr;
+
+    grid-template-rows: 73px;
 
     align-items: $align_center;
-
-    margin-left: 12px;
-    
-    text-indent: 73px; 
 
     border-radius: 20px;
 
     box-shadow: $box-shadow2;
+
+    margin-left: 12px;
+
+    background-color: $background-color-secondary;
 }
 
-@mixin img__container__grid__fonctionnement{
-    position: $position-absolute;
-
-    padding-left: 33px;
+@mixin icon__grid__fonctionnement{
+    justify-content: $justify-center;
 }
-

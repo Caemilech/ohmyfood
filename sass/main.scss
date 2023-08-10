@@ -23,6 +23,10 @@ a{
     @include links;  
 }
 
+h1, h2, h3, p{
+    margin: 0;
+}
+
 /* Animation Coeur */
 
 .fa-heart__homepage{
@@ -58,7 +62,8 @@ a{
 /* Header */
 
 .header__homepage{
-    @include flex__center;
+    @include grid;
+    @include header;
     @include homepage__header;
 }
 
@@ -76,19 +81,15 @@ a{
 /* Section Exploration */
 
 .exploration{
-    @include flex__center;
+    @include grid;
     @include exploration;
 
-    & > h1{
-        margin: 0;
-    }
-    
-    & > p{
-        margin-bottom: 26px ;
-    }
+    &__text{
+        @include grid;
+        @include text__exploration;
+    }    
 
     &__button{
-        @include flex__center;
         @include button;
         @include button__exploration;
     }
@@ -102,45 +103,41 @@ a{
 /* Section Fonctionnement*/
 
 .fonctionnement{
+    @include grid;
     @include fonctionnement;
-
-    & > h2{
-        margin-bottom: 26px;
-    }
 
     &__grid{
         @include grid;
         @include grid__fonctionnement;
 
-        &__img{
+        &__img{ 
             @include img__grid__fonctionnement;
 
             &__number{
-                @include number__img__grid__fonctionnement;
+                @include number__grid__fonctionnement;
             }
         }
 
         &__container{
             @include grid;
-            @include container__grid__fonctionnement;
-            
-            &__img{
-                @include img__container__grid__fonctionnement;
-            }
+            @include container__grid__fonctionnement;   
+        }       
+
+        &__icon{
+            @include grid;
+            @include icon__grid__fonctionnement;
         }
+       
     }
-}  
+}
+ 
 
 /* Section Restaurants */
 
 .restaurants{
-    @include restaurants;
-        
-    & > h2{
-        height: 48px;
-        margin: 0px 80px 0px 3px;
-    }
-
+    @include grid;
+    @include restaurants;       
+    
     &__grid{
         @include grid__restaurants;
         @include grid;
@@ -149,27 +146,24 @@ a{
             @include new__grid__restaurants;
         }
 
+        &__links{
+            @include links__grid__restaurants
+        }
+
         &__img{
             @include img;
             @include img__grid__restaurants;
         }      
         
-        &__links{
-            @include links__grid__restaurants
-        }
-
         &__container {
-            @include flex;
-            @include container__grid__restaurants;
-            
-            &>h3 {
-                margin: 16px 60px 0px 13px;
-            }
-            
-            &>p {
-                margin: 0px 60px 12px 13px;
-            }                              
-        }            
+            @include grid;
+            @include container__grid__restaurants;          
+        }  
+        
+        &__text{
+            @include grid;
+            @include text___grid__restaurants;
+        }
     }
 }
 
@@ -179,26 +173,9 @@ a{
     @include grid;
     @include footer;
 
-    &__img{
-        @include img__footer;
-    }
-
     &__grid{
         @include grid;
-        @include grid__footer;
-
-        &__icon-text{
-            @include flex;
-            @include icon-text__grid__footer;
-        }
-
-        &__img{
-            @include img__grid__footer;
-        }
-
-        &__text{
-            @include flex;
-        }
+        @include grid__footer;     
     }
 }
 
@@ -209,6 +186,7 @@ a{
 .header{
     @include grid;
     @include header;
+    @include menu__header;   
 
     &__img{
         @include img__header;
@@ -226,14 +204,15 @@ a{
 
 .section__principale{
     @include principale__section;
-    
-    &__space{
-        @include space__section__principale;
-    }
 
     &__header{
-        @include flex;
+        @include grid;
         @include header__section__principale;           
+    }
+    
+    &__grid{
+        @include grid;
+        @include grid__section__principale;
     }
 
     &__title{
@@ -246,26 +225,18 @@ a{
     }
 
     &__menu{
-        @include flex;
+        @include grid;
         @include menu__section__principale;
     }
-
-    article>h3 {
-        margin: 15px 15px 5px 15px;
-    }
-
-    .price {
+    
+    .price{
         @include grid;
         @include price;
     }
-
-    .price > p{
-        margin: 0;
-    }     
 }
 
 .section__principale__button{
-    @include flex__center;
+    @include grid;
     @include button;
     @include button__section__principale;
 }

@@ -24,8 +24,10 @@
                 </form>                
             </section>
             <section class="exploration">
-                <h1>Réservez le menu qui vous convient</h1>
-                <p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
+                <div class="exploration__text">
+                   <h1>Réservez le menu qui vous convient</h1>
+                   <p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p> 
+                </div>                
                 <button class="exploration__button">
                     <a href="#restaurants">Explorer nos restaurants</a>
                 </button>
@@ -34,83 +36,113 @@
                 <h2>Fonctionnement</h2>
                 <div class="fonctionnement__grid">
                     <article>
-                        <img class="fonctionnement__grid__img" src="images/icones/Ellipse.svg" alt="Ellipse">
-                        <p class="fonctionnement__grid__img__number">1</p>
+                        <div class="fonctionnement__grid__img">
+                            <img class="fonctionnement__grid__img__number" src="images/icones/Ellipse 1.svg" alt="Ellipse">
+                        </div>
                         <div class="fonctionnement__grid__container">
-                            <img class="fonctionnement__grid__container__img" src="images/icones/mobile-screen-button.svg"
+                            <div class="fonctionnement__grid__icon">
+                                <img src="images/icones/mobile-screen-button.svg"
                                 alt="téléphone portable">
-                            <p>Choisissez un restaurant</p>
+                            </div>                 
+                            <div>
+                                <p>Choisissez un restaurant</p>
+                            </div>
                         </div>
                     </article>
                     <article>
-                        <img class="fonctionnement__grid__img" src="images/icones/Ellipse.svg" alt="Ellipse">
-                        <p class="fonctionnement__grid__img__number">2</p>
+                        <div class="fonctionnement__grid__img">
+                            <img class="fonctionnement__grid__img__number" src="images/icones/Ellipse 2.svg" alt="Ellipse">
+                        </div>
                         <div class="fonctionnement__grid__container">
-                            <img class="fonctionnement__grid__container__img" src="images/icones/list-ul.svg" alt="liste">
-                            <p>Composez un menu</p>
+                            <div class="fonctionnement__grid__icon">
+                                <img src="images/icones/list-ul.svg"
+                                alt="téléphone portable">
+                            </div>                 
+                            <div>
+                                <p>Composez un menu</p>
+                            </div>
                         </div>
                     </article>
                     <article>
-                        <img class="fonctionnement__grid__img" src="images/icones/Ellipse.svg" alt="Ellipse">
-                        <p class="fonctionnement__grid__img__number">3</p>
-                        <div class="fonctionnement__grid__container">
-                            <img class="fonctionnement__grid__container__img" src="images/icones/store.svg" alt="magasin">
-                            <p>Dégustez un restaurant</p>
+                        <div class="fonctionnement__grid__img">
+                            <img class="fonctionnement__grid__img__number" src="images/icones/Ellipse 3.svg" alt="Ellipse">
                         </div>
-                    </article>
+                        <div class="fonctionnement__grid__container">
+                            <div class="fonctionnement__grid__icon">
+                                <img src="images/icones/store.svg"
+                                alt="téléphone portable">
+                            </div>                 
+                            <div>
+                                <p>Dégustez un restaurant</p>
+                            </div>
+                        </div>
+                    </article>                    
                 </div>
             </section>
             <section class="restaurants">
                 <h2 id="restaurants">Restaurants</h2>
                 <div class="restaurants__grid">
                     <article>
-                        <a class="restaurants__grid__links" href="page1.html">
-                            <p class="restaurants__grid__new">Nouveau</p>
-                            <img class="restaurants__grid__img" src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
-                                alt="La palette du Goût à Ménilmontant">
+                        <a class="restaurants__grid__links" href="page1.html">                                                  
                             <div class="restaurants__grid__container">
-                                <h3>La palette du goût</h3>
-                                <p>Ménilmontant</p>
-                                <i class="fa-regular fa-heart fa-heart__homepage" style="font-size: 25px;"></i>
-                                <i class="fa-solid fa-heart fa-heart__full__homepage" style="font-size: 25px;"></i>
-                            </div>
-                        </a>                                            
-                    </article>
-                    <article>
-                        <a class="restaurants__grid__links" href="#">
-                            <p class="restaurants__grid__new">Nouveau</p>
-                            <img class="restaurants__grid__img" src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg"
-                                alt="La palette du Goût à Ménilmontant">
-                            <div class="restaurants__grid__container">
-                                <h3>La note enchantée</h3>
-                                <p>Charonne</p>
-                                <i class="fa-regular fa-heart fa-heart__homepage" style="font-size: 25px;"></i>
-                                <i class="fa-solid fa-heart fa-heart__full__homepage" style="font-size: 25px;"></i>
-                            </div>
-                        </a>                                           
-                    </article>
-                    <article>
-                        <a class="restaurants__grid__links" href="#">
-                            <img class="restaurants__grid__img" src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
-                                alt="La palette du Goût à Ménilmontant">
-                            <div class="restaurants__grid__container">
-                                <h3>À la française</h3>
-                                <p>Cité Rouge</p>
-                                <i class="fa-regular fa-heart fa-heart__homepage" style="font-size: 25px;"></i>
-                                <i class="fa-solid fa-heart fa-heart__full__homepage" style="font-size: 25px;"></i>
-                            </div>
+                                <div>
+                                    <img class="restaurants__grid__img" src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
+                                    alt="La palette du Goût à Ménilmontant">   
+                                </div>
+                                <div class="restaurants__grid__text">
+                                    <h3>La palette du goût</h3>
+                                    <p>Ménilmontant</p>
+                                    <i class="fa-regular fa-heart fa-heart__homepage" style="font-size: 25px;"></i>
+                                    <i class="fa-solid fa-heart fa-heart__full__homepage" style="font-size: 25px;"></i>
+                                </div> 
+                            </div>                        
                         </a>                                              
-                    </article>
+                    </article> 
                     <article>
-                        <a class="restaurants__grid__links" href="#">
-                            <img class="restaurants__grid__img" src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
-                                alt="La palette du Goût à Ménilmontant">
+                        <a class="restaurants__grid__links" href="#">                                                  
                             <div class="restaurants__grid__container">
-                                <h3>Le délice des sens</h3>
-                                <p>Folie-Méricourt</p>
-                                <i class="fa-regular fa-heart fa-heart__homepage" style="font-size: 25px;"></i>
-                                <i class="fa-solid fa-heart fa-heart__full__homepage" style="font-size: 25px;"></i>
-                            </div>
+                                <div>
+                                    <img class="restaurants__grid__img" src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg">
+                                </div>
+                                <div class="restaurants__grid__text">
+                                    <h3>La note enchantée</h3>
+                                    <p>Charonne</p>
+                                    <i class="fa-regular fa-heart fa-heart__homepage" style="font-size: 25px;"></i>
+                                    <i class="fa-solid fa-heart fa-heart__full__homepage" style="font-size: 25px;"></i>
+                                </div> 
+                            </div>                        
+                        </a>                                              
+                    </article> 
+                    <article>
+                        <a class="restaurants__grid__links" href="#">                                                  
+                            <div class="restaurants__grid__container">
+                                <div>
+                                    <img class="restaurants__grid__img" src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
+                                    alt="La palette du Goût à Ménilmontant">   
+                                </div>
+                                <div class="restaurants__grid__text">
+                                    <h3>À la française</h3>
+                                    <p>Cité Rouge</p>
+                                    <i class="fa-regular fa-heart fa-heart__homepage" style="font-size: 25px;"></i>
+                                    <i class="fa-solid fa-heart fa-heart__full__homepage" style="font-size: 25px;"></i>
+                                </div> 
+                            </div>                        
+                        </a>                                              
+                    </article> 
+                    <article>
+                        <a class="restaurants__grid__links" href="#">                                                  
+                            <div class="restaurants__grid__container">
+                                <div>
+                                    <img class="restaurants__grid__img" src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
+                                    alt="La palette du Goût à Ménilmontant">   
+                                </div>
+                                <div class="restaurants__grid__text">
+                                    <h3>Le délice des sens</h3>
+                                    <p>Folie-Méricourt</p>
+                                    <i class="fa-regular fa-heart fa-heart__homepage" style="font-size: 25px;"></i>
+                                    <i class="fa-solid fa-heart fa-heart__full__homepage" style="font-size: 25px;"></i>
+                                </div> 
+                            </div>                        
                         </a>                                              
                     </article>                    
                 </div>               
@@ -119,22 +151,22 @@
         <footer>
             <div class="footer">
                 <div class="footer__img__responsive">
-                    <img class="footer__img" src="images/logo/ohmyfood_footer.svg" alt="Ohmyfood"> 
+                    <img src="images/logo/ohmyfood_footer.svg" alt="Ohmyfood"> 
                 </div>                
                 <div class="footer__grid">
-                    <div class="footer__grid__icon-text">
-                        <img class="footer__grid__img" src="images/icones/Fourchette-et-couteau.svg" alt="Fourchette et couteau">
-                        <a>Proposer un restaurant</a>   
+                    <div>
+                        <img src="images/icones/Fourchette-et-couteau.svg" alt="Fourchette et couteau">
+                        <a>Proposer un restaurant</a>
                     </div>
-                    <div class="footer__grid__icon-text">
-                        <img class="footer__grid__img" src="images/icones/Partenariat.svg" alt="Partenariat">
-                        <a>Devenir partenaire</a>   
+                    <div>
+                        <img src="images/icones/Partenariat.svg" alt="Partenariat">
+                        <a>Devenir partenaire</a>
                     </div>
-                    <div class="footer__grid__text">
-                        <a>Mentions légales</a> 
+                    <div>
+                        <a>Mentions légales</a>
                     </div>
-                    <div class="footer__grid__text">
-                        <a>Contact</a> 
+                    <div>
+                        <a href="#">Contact</a>
                     </div>
                 </div>
             </div>

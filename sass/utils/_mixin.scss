@@ -4,7 +4,7 @@
 
 @mixin flex__center{
     display: flex;
-    justify-content: center;
+    justify-content: $justify-center;
 }
 
 @mixin grid{

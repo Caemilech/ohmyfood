@@ -5,6 +5,9 @@
 
 @mixin heart__homepage{   
     padding-top: 23px;
+
+    grid-row-start: 2;
+
 }
 
 @mixin heart__full{  
