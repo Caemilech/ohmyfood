@@ -3,7 +3,8 @@
 
     box-shadow: $box-shadow1;  
     
-    align-items: $align_center;
+
+
 }
 
 @mixin homepage__header{
@@ -26,6 +27,10 @@
 
 @mixin img__header{
     padding-left: 17px;
+
+    @include grid1($grid: grid, $grid-template-rows: 1px, $grid-template-columns: 1px, $grid-gap: 1px);
+
+    @include position($position:absolute);
 }
 
 

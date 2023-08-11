@@ -15,29 +15,30 @@
 /* Général */
 
 body{
-    @include margin;
-    @include typography;
+    @include margin(0 0 0 0);
+    font-family: "Roboto", sans-serif;
 }
 
 a{
-    @include links;  
+    @include links($color_links: $background-color-first);  
 }
 
 h1, h2, h3, p{
-    margin: 0;
+    @include margin(0 0 0 0);
 }
 
 /* Animation Coeur */
 
 .fa-heart__homepage{
-    @include heart;
-    @include heart__homepage;
+    @include position($position:absolute,$right:24px);
+    @include padding(23px 0 0 0);
 }
 
 .fa-heart__full__homepage{
-    @include heart;
-    @include heart__homepage;
-    @include heart__full;
+    @include position($position:absolute,$right:24px);
+    @include padding(23px 0 0 0);
+    opacity: 0;
+    color: blue;
 }
 
 .fa-heart__full__homepage:hover{
@@ -45,12 +46,13 @@ h1, h2, h3, p{
 }    
 
 .fa-heart__menu{
-    @include heart;
+    @include position($position:absolute,$right:24px)
 }
 
 .fa-heart__full{
-    @include heart;
-    @include heart__full;
+    @include position($position:absolute,$right:24px);
+    opacity: 0;
+    color: blue;
 }
 
 .fa-heart__full:hover{
@@ -62,41 +64,48 @@ h1, h2, h3, p{
 /* Header */
 
 .header__homepage{
-    @include grid;
-    @include header;
-    @include homepage__header;
 
-    .header__logo{
-        @include grid;
-        @include logo__header;
+    @include grid1($grid-template-rows: 63px);
+    box-shadow: $box-shadow1; 
+    @include position_horizontal($align-items: center);
+
+    &__logo{
+        @include margin(0 auto 0 auto);
     }
 }
 
 /* Section Location */
 
 .location{
-    @include flex__center;
-    @include location;
+    @include grid1($grid-template-rows: 50px, $grid-template-columns: 16px 109px, $grid-gap: 17px);
+    @include position_vertical($justify-content: center);
+    @include position_horizontal($align-items: center);
+    background-color: $background-color-location;
     
     &__search input[type=text]{
-        @include search__location
-    }
+        @include border($border-height: 19px, $border-width: 109px, $border-style: none);
+        background-color: $background-color-location;
+    }    
 }
 
 /* Section Exploration */
 
 .exploration{
-    @include grid;
-    @include exploration;
-
+    @include grid1($grid-gap: 27px);
+    @include padding(39px 20px 57px 20px);
+    @include position_horizontal($align-items: center);
+    text-align: center;
+    background-color: #F6F6F6;
+    
     &__text{
-        @include grid;
-        @include text__exploration;
+        @include grid1($grid-gap: 5px)
     }    
 
     &__button{
-        @include button;
-        @include button__exploration;
+        @include border($border-height: 50px, $border-width: 218px, $border:none, $border-radius: 25px);
+        background: linear-gradient(175deg, #9356DC, #FF79DA);
+        box-shadow: $box_shadow_button;
+        @include margin(0 auto 0 auto);
     }
 
     .exploration__button:hover{
@@ -108,29 +117,32 @@ h1, h2, h3, p{
 /* Section Fonctionnement*/
 
 .fonctionnement{
-    @include grid;
-    @include fonctionnement;
+    @include grid1($grid-gap: 20px);
+    @include margin(48px 20px 68px 20px);
 
     &__grid{
-        @include grid;
-        @include grid__fonctionnement;
+        @include grid1($grid-gap: 25px);
 
         &__img{ 
-            @include img__grid__fonctionnement;
+            @include position($position: relative);
 
             &__number{
-                @include number__grid__fonctionnement;
+                @include position($position: absolute, $top: 24px);
             }
         }
 
         &__container{
-            @include grid;
-            @include container__grid__fonctionnement;   
+            @include grid1($grid-template-rows: 73px, $grid-template-columns: 70px 1fr);
+            @include position_horizontal($align-items: center);
+            @include border($border-height: 73px, $border-radius: 20px);
+            background-color: $background-color-secondary;
+            box-shadow: $box-shadow2;
+            @include margin($margin-left: 0 0 0 12px);
         }       
 
         &__icon{
-            @include grid;
-            @include icon__grid__fonctionnement;
+            @include grid1;
+            @include position_vertical($justify-content: center);
         }
        
     }
@@ -140,34 +152,42 @@ h1, h2, h3, p{
 /* Section Restaurants */
 
 .restaurants{
-    @include grid;
-    @include restaurants;       
+    @include grid1($grid-gap: 20px);
+    @include padding(54px 18px 66px 18px);
+    background-color: $background-color-secondary;   
     
     &__grid{
-        @include grid__restaurants;
-        @include grid;
+        @include grid1($grid-gap: 18px);
 
         &__links{
-            @include links__grid__restaurants
+            @include links($color_links: black); 
         }         
         
         &__container {
-            @include grid;
-            @include container__grid__restaurants;          
-        }  
-
+            @include grid1;
+            @include position($position: relative);     
+            @include border($border-radius: 15px);
+            background-color: $background-color-first;
+            box-shadow: $box-shadow2;
+        }   
+        
         &__new{
-            @include new__grid__restaurants;
+            @include position($position: absolute, $top: 15px, $right: 15px);
+            @include padding(7px 10px 6px 9px);
+            @include border($border-radius: 2px);
+            box-shadow: $box-shadow1;
+            background-color: $color-menu-title;
+            color: $color-restaurants_grid_new;
         }
 
         &__img{
-            @include img;
-            @include img__grid__restaurants;
+            @include img($img_height: 175px, $img_width: 100%, $object-fit: cover, $object-position: center);
+            @include border($border-radius: 15px 15px 0 0)
         } 
         
         &__text{
-            @include grid;
-            @include text___grid__restaurants;
+            @include grid1($grid-gap: 5px);
+            @include margin(10px 60px 12px 13px);
         }
     }
 }
@@ -175,12 +195,13 @@ h1, h2, h3, p{
 /* Section Footer */
 
 .footer{
-    @include grid;
-    @include footer;
-
+    @include grid1($grid-gap: 22px);
+    @include padding(22px 25px 22px 25px);
+    background-color: $background-color-footer;
+    
     &__grid{
-        @include grid;
-        @include grid__footer;     
+        @include grid1($grid-template-rows: 19px, $grid-gap: 7px); 
+        color: $background-color-first;
     }
 }
 
@@ -189,186 +210,79 @@ h1, h2, h3, p{
 /* Header */
 
 .header{
-    @include grid;
-    @include header;
-    @include menu__header;   
+    @include grid1($grid-template-rows: 63px, $grid-template-columns: 89px 1fr);
+    @include position_horizontal($align-items: center);
+    box-shadow: $box-shadow1;
 
     &__img{
-        @include img__header;
+        @include padding($padding-left: 0 0 0 17px);
     }
 
-    .header__logo{
-        @include grid;
-        @include logo__header__menu;
+    &__logo{
+        @include margin(0 auto 0 auto);
+        @include padding(0 34px 0 0);
     }
 }
 
 /* Main */
 
 .main__img{
-    @include img;
-    @include img__main;
+    @include img($img_height: 275px, $img_width: 100%, $object-fit: cover, $object-position: center);
 }
 
 /* Section Principale */
 
 .section__principale{
-    @include principale__section;
+    @include position($position: relative, $bottom: 75px);
+    @include border ($border-radius: 40px 40px 0 0);
+    @include padding(0 13px 40px 13px);
+    @include margin(0 0 -75px 0);
+    background-color: $background-color-secondary;
 
     &__header{
-        @include grid;
-        @include header__section__principale;           
+        width: 320px;       
+        @include position($position: relative);
+        @include margin(0 auto 0 auto);
+        @include position_vertical($justify-content: center);
+        @include padding(32px 17px 40px 17px);           
     }
     
     &__grid{
-        @include grid;
-        @include grid__section__principale;
+        @include grid1($grid-gap: 40px);
     }
 
     &__title{
-        @include title__section__principale;
+        @include border($border-height: 40px, $border: 3px, $border-style: solid, $border-color: $color-menu-title);
     }
 
     &__cards{
-        @include grid;
-        @include cards__section__principale;
+        @include grid1($grid-gap: 12px);
     }
 
     &__menu{
-        @include grid;
-        @include menu__section__principale;
+        @include grid1($grid-template-columns: 287px 1fr, $grid-gap: 5px);
+        @include border($border-radius: 15px);
+        @include padding(15px);
+        box-shadow: $box-shadow2;
+        background-color: $background-color-first;
     }
     
     .price{
-        @include grid;
-        @include price;
+        @include grid1;
+        @include grid__position($grid-row-start: 1, $grid-column-end: 3);
+        @include position_horizontal($align-items: center);
+        @include position_vertical($justify-content: end);
     }
 }
 
 .section__principale__button{
-    @include grid;
-    @include button;
-    @include button__section__principale;
+    @include border($border-height: 50px, $border-width: 186px, $border: none, $border-radius: 25px);
+    background: linear-gradient(175deg, #9356DC, #FF79DA);
+    box-shadow: $box_shadow_button;
+    @include margin(0 auto 0 auto)
 }
 
-.footer__menu{
-    position: relative;
-    top: -75px;
-}
-
-/* Responsive Page d'Acceuil*/
-
-/* Responsive Header */
-
-@media (min-width: 1024px){     
-
-    .header__homepage{
-        grid-template-rows: 96px;
-    }
-}
-
-/* Responsive Section Exploration */
-
-@media (min-width: 1024px){     
-
-    .exploration{
-        grid-gap: 18px;
-
-        padding: 30px 0px 30px 0px;
-    }
-
-    .exploration__text{
-        grid-gap: 18px;
-    }   
-}
-
-/* Responsive Section Fonctionnement */
-
-@media (min-width: 1024px){   
-    
-    .fonctionnement{
-        max-width: 1024px;
-
-        margin: 50px auto 50px auto;
-    }
-
-    .fonctionnement__grid{
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-
-/* Responsive Section Restaurants */
-
-@media (min-width: 1024px){     
-
-    .restaurants{
-        padding: 30px 0px 30px 0px;
-        
-        margin: $margin-auto;
-
-        max-width: 1024px;
-
-        grid-gap: 28px;
-    }
-
-    .restaurants__grid{
-        grid-template-columns: 1fr 1fr;
-
-        grid-gap: 50px 100px;
-    }
-}
-
-/* Responsive Section Footer */
-
-@media (min-width: 768px){    
-
-    .footer{
-        padding: 30px 25px 30px 25px;
-
-        grid-gap: 16px
-    }     
-
-    .footer__grid{
-        grid-template-columns: 191px 191px 130px 130px;
-       
-        align-items: end;
-    }    
-
-    .footer__grid__text{
-        display: flex;
-        
-        gap: 11px;        
-    }
-}
-
-@media (min-width: 1024px){ 
-    
-    .footer{
-        grid-template-rows: 54px;
-    }
-
-    .footer__img {
-        @include grid;
-    
-        grid-row-start: 1;
-    
-        grid-column-end: 3;
-    
-        justify-content: start;
-    
-        align-items: end;
-    }
-
-    .footer__grid{
-        grid-template-rows: 54px;
-
-        justify-content: end;
-    }
-}
-
-
-
-
+/* Responsive Tablet */
 
 /* Responsive Menu */
 
@@ -378,14 +292,101 @@ h1, h2, h3, p{
 
     .section__principale{
         max-width: 1024px;
-
-        margin: 40px auto 40px auto;
+        @include margin(40px auto 40px auto);
     }
 
     .section__principale__grid{
         max-width: 768px;
-
-        margin: $margin-auto;
+        @include margin(0 auto 0 auto);
     }
 }
 
+@media (min-width: 768px){    
+
+    .footer{
+        @include grid1($grid-gap: 16px);
+        @include padding(30px 25px 30px 25px);
+    }     
+
+    .footer__grid{
+        @include grid1($grid-template-columns: 191px 191px 130px 130px, $grid-gap: 7px); 
+        @include position_horizontal($align-items: end);
+    }    
+
+    .footer__grid__text{
+        @include grid1($grid-template-columns: 13px 178px, $grid-gap: 11px);
+        @include position_horizontal($align-items: center);              
+    }
+}
+
+/* Responsive Desktop */
+
+/* Responsive Page d'Acceuil*/
+
+/* Responsive Header */
+
+@media (min-width: 1024px){     
+
+    .header__homepage{
+        @include grid1($grid-template-rows: 96px);
+    }
+}
+
+/* Responsive Section Exploration */
+
+@media (min-width: 1024px){     
+
+    .exploration{
+        @include grid1($grid-gap: 18px);
+        @include padding(30px 0 30px 0px);
+    }
+
+    .exploration__text{
+        @include grid1($grid-gap: 18px);
+    }   
+}
+
+/* Responsive Section Fonctionnement */
+
+@media (min-width: 1024px){   
+    
+    .fonctionnement{
+        max-width: 1024px;
+        @include margin(50px auto 50px auto);
+    }
+
+    .fonctionnement__grid{
+        @include grid1($grid-template-columns: 1fr 1fr 1fr, $grid-gap: 25px);
+    }
+}
+
+/* Responsive Section Restaurants */
+
+@media (min-width: 1024px){     
+
+    .restaurants{        
+        max-width: 1024px;        
+        @include grid1($grid-gap: 18px);
+        @include padding(30px 0 30px 0px);
+        @include margin (0 auto 0 auto);
+    }
+
+    .restaurants__grid{
+        @include grid1($grid-template-columns: 1fr 1fr, $grid-gap: 50px 100px);
+    }
+}
+
+@media (min-width: 1024px){ 
+    
+    .footer__img {
+        @include grid1;
+        @include grid__position($grid-row-start: 1, $grid-column-end: 3);  
+        @include position_horizontal($align-items: end);
+        @include position_vertical($justify-content: start);
+    }
+
+    .footer__grid{
+        @include grid1($grid-template-rows: 54px, $grid-template-columns: 191px 191px 130px 130px, $grid-gap: 7px); 
+        @include position_vertical($justify-content: end);
+    }
+}

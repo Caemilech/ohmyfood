@@ -5,13 +5,13 @@
 @mixin principale__section{
     border-radius: 40px 40px 0px 0px;
 
-    padding: 40px 13px 40px 13px;
+    margin: $margin-auto;
 
     background-color: $background-color-secondary;
 
     position: $position-relative;
 
-    top: -75px;
+    bottom: 75px;
 }
 
 @mixin header__section__principale{

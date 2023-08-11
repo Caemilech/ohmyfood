@@ -1,20 +1,61 @@
-@mixin flex{
-    display: flex;
+@mixin img($img_height: null, $img_width: null, $object-fit: null, $object-position: null){
+    height: $img_height;
+    width: $img_width;
+    object-fit: $object-fit;
+    object-position: $object-position;
 }
 
-@mixin flex__center{
-    display: flex;
-    justify-content: $justify-center;
+@mixin grid1($grid: grid, $grid-template-rows: null, $grid-template-columns: null, $grid-gap: null){
+    display: $grid;
+    grid-template-rows: $grid-template-rows;
+    grid-template-columns: $grid-template-columns;
+    grid-gap: $grid-gap;
 }
 
-@mixin grid{
-    display: grid;
+@mixin grid__position($grid-row-start: null, $grid-row-end: null, $grid-column-start: null, $grid-column-end: null){
+    grid-row-start: $grid-row-start;
+    grid-row-end: $grid-row-end;
+    grid-column-start: $grid-column-start;
+    grid-column-end: $grid-column-end;
 }
 
-@mixin img{
-    width: 100%;
-
-    object-fit: cover;
-    
-    object-position: center;
+@mixin position_horizontal($align-items: null, $align-self: null, $align-content: null){
+    align-items: $align-items;
+    align-self: $align-self;
+    align-content: $align-content;
 }
+
+@mixin position_vertical($justify-items: null, $justify-self: null, $justify-content: null){
+    justify-items: $justify-items;
+    justify-self: $justify-self;
+    justify-content: $justify-content;
+}
+
+@mixin position($position: null, $top: null, $right: null, $bottom: null, $left: null){
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin margin($margin-top: null, $margin-left: null, $margin-bottom: null, $margin-right: null){    
+    margin: $margin-top $margin-left $margin-bottom $margin-right;    
+}
+
+@mixin padding($padding-top: null, $padding-left: null, $padding-bottom: null, $padding-right: null){
+    padding: $padding-top $padding-left $padding-bottom $padding-right;    
+}
+
+@mixin border($border-height: null, $border-width: null, $border: null, $border-style: null, $border-color: null, $border-radius: null, $border-top: null, $border-right: null, $border-bottom: null, $border-left: null){
+    height: $border-height;
+    width: $border-width;
+    border: $border $border-style $border-color;
+    border-radius: $border-radius;
+}
+
+@mixin links ($color_links: null, $text-decoration: none){
+    color: $color_links;
+    text-decoration: $text-decoration;
+}
+
