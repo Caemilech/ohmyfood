@@ -7,7 +7,7 @@
 }
 
 @mixin grid__footer{
-    grid-auto-rows: 19px;
+    grid-template-rows: 19px;
 
     grid-gap: 7px;
 

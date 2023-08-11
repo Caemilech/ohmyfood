@@ -65,6 +65,11 @@ h1, h2, h3, p{
     @include grid;
     @include header;
     @include homepage__header;
+
+    .header__logo{
+        @include grid;
+        @include logo__header;
+    }
 }
 
 /* Section Location */
@@ -142,23 +147,23 @@ h1, h2, h3, p{
         @include grid__restaurants;
         @include grid;
 
-        &__new{
-            @include new__grid__restaurants;
-        }
-
         &__links{
             @include links__grid__restaurants
-        }
-
-        &__img{
-            @include img;
-            @include img__grid__restaurants;
-        }      
+        }         
         
         &__container {
             @include grid;
             @include container__grid__restaurants;          
         }  
+
+        &__new{
+            @include new__grid__restaurants;
+        }
+
+        &__img{
+            @include img;
+            @include img__grid__restaurants;
+        } 
         
         &__text{
             @include grid;
@@ -190,6 +195,11 @@ h1, h2, h3, p{
 
     &__img{
         @include img__header;
+    }
+
+    .header__logo{
+        @include grid;
+        @include logo__header__menu;
     }
 }
 
@@ -241,24 +251,35 @@ h1, h2, h3, p{
     @include button__section__principale;
 }
 
+.footer__menu{
+    position: relative;
+    top: -75px;
+}
+
+/* Responsive Page d'Acceuil*/
+
+/* Responsive Header */
+
 @media (min-width: 1024px){     
 
     .header__homepage{
-        padding: 30px 0px 32px 0px;
+        grid-template-rows: 96px;
     }
 }
+
+/* Responsive Section Exploration */
 
 @media (min-width: 1024px){     
 
     .exploration{
-        gap: 18px;
+        grid-gap: 18px;
 
-        padding-top: 30px;
+        padding: 30px 0px 30px 0px;
     }
 
-    .exploration__button{
-        margin-bottom: 30px;
-    }
+    .exploration__text{
+        grid-gap: 18px;
+    }   
 }
 
 /* Responsive Section Fonctionnement */
@@ -266,7 +287,9 @@ h1, h2, h3, p{
 @media (min-width: 1024px){   
     
     .fonctionnement{
-        margin: 50px 0px 50px 0px;
+        max-width: 1024px;
+
+        margin: 50px auto 50px auto;
     }
 
     .fonctionnement__grid{
@@ -280,6 +303,12 @@ h1, h2, h3, p{
 
     .restaurants{
         padding: 30px 0px 30px 0px;
+        
+        margin: $margin-auto;
+
+        max-width: 1024px;
+
+        grid-gap: 28px;
     }
 
     .restaurants__grid{
@@ -291,18 +320,72 @@ h1, h2, h3, p{
 
 /* Responsive Section Footer */
 
-@media (min-width: 1024px){    
-    
-    .footer__img__responsive{
-        @include grid;
-        grid-row-start: 1;
-        grid-column-end: 3;
+@media (min-width: 768px){    
+
+    .footer{
+        padding: 30px 25px 30px 25px;
+
+        grid-gap: 16px
+    }     
+
+    .footer__grid{
+        grid-template-columns: 191px 191px 130px 130px;
+       
+        align-items: end;
+    }    
+
+    .footer__grid__text{
+        display: flex;
         
+        gap: 11px;        
+    }
+}
+
+@media (min-width: 1024px){ 
+    
+    .footer{
+        grid-template-rows: 54px;
+    }
+
+    .footer__img {
+        @include grid;
+    
+        grid-row-start: 1;
+    
+        grid-column-end: 3;
+    
+        justify-content: start;
+    
+        align-items: end;
     }
 
     .footer__grid{
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-       
+        grid-template-rows: 54px;
+
+        justify-content: end;
+    }
+}
+
+
+
+
+
+/* Responsive Menu */
+
+/* Responsive Section Principale */
+
+@media (min-width: 768px){
+
+    .section__principale{
+        max-width: 1024px;
+
+        margin: 40px auto 40px auto;
+    }
+
+    .section__principale__grid{
+        max-width: 768px;
+
+        margin: $margin-auto;
     }
 }
 

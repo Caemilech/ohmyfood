@@ -5,19 +5,27 @@
 @mixin principale__section{
     border-radius: 40px 40px 0px 0px;
 
-    padding: 40px 13px 0px 13px;
+    padding: 40px 13px 40px 13px;
 
     background-color: $background-color-secondary;
 
     position: $position-relative;
 
-    top: -60px;
+    top: -75px;
 }
 
 @mixin header__section__principale{
-    align-items: $align_center;
+    width: 320px;
+
+    position: $position-relative;
+
+    grid-template-columns: 320px 1fr;
 
     padding-bottom: 40px;
+
+    margin: $margin-auto;
+
+    justify-content: center;
 }
 
 @mixin grid__section__principale{

@@ -13,9 +13,9 @@
 @mixin new__grid__restaurants{
     position: $position-absolute;
 
-    top: -146px;
+    top: 15px;
 
-    right: 20px;
+    right: 15px;
 
     padding: 7px 10px 6px 9px;
    
@@ -35,8 +35,6 @@
 }
 
 @mixin links__grid__restaurants{
-    position: $position-relative;
-
     color: $color-links;
 }
 

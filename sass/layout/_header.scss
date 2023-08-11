@@ -1,5 +1,5 @@
 @mixin header{
-    grid-auto-rows: 63px;
+    grid-template-rows: 63px;
 
     box-shadow: $box-shadow1;  
     
@@ -8,8 +8,16 @@
 
 @mixin homepage__header{
     grid-template-columns: 1fr ;
+}
 
-    padding: 0px 89px 0px 89px;
+@mixin logo__header{
+    margin: $margin-auto;   
+}
+
+@mixin logo__header__menu{
+    margin: $margin-auto;   
+    
+    padding-right: 34px;
 }
 
 @mixin menu__header{
@@ -19,6 +27,8 @@
 @mixin img__header{
     padding-left: 17px;
 }
+
+
 
 
 
