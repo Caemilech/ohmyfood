@@ -15,38 +15,20 @@ h1, h2, h3, p {
 }
 
 /* Animation Coeur */
-.fa-heart__homepage {
+.fa-regular {
   position: absolute;
   right: 24px;
-  padding: 23px 0 0 0;
+  font-size: 25px;
 }
 
-.fa-heart__full__homepage {
-  position: absolute;
-  right: 24px;
-  padding: 23px 0 0 0;
-  opacity: 0;
-  color: blue;
-}
-
-.fa-heart__full__homepage:hover {
+.fa-regular:active {
   opacity: 1;
-}
-
-.fa-heart__menu {
-  position: absolute;
-  right: 24px;
-}
-
-.fa-heart__full {
-  position: absolute;
-  right: 24px;
-  opacity: 0;
-  color: blue;
-}
-
-.fa-heart__full:hover {
-  opacity: 1;
+  transition: all ease-in-out;
+  -webkit-background-clip: text;
+          background-clip: text;
+  font-weight: 900;
+  background-image: linear-gradient(175deg, #9356DC, #FF79DA);
+  -webkit-text-fill-color: transparent;
 }
 
 /* Page d'acceuil */
@@ -74,7 +56,11 @@ h1, h2, h3, p {
 .location__search input[type=text] {
   height: 19px;
   width: 109px;
-  border: none;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-style: none;
   background-color: #EAEAEA;
 }
 
@@ -94,7 +80,10 @@ h1, h2, h3, p {
 .exploration__button {
   height: 50px;
   width: 218px;
-  border: none;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
   border-radius: 25px;
   background: linear-gradient(175deg, #9356DC, #FF79DA);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
@@ -128,6 +117,10 @@ h1, h2, h3, p {
   grid-template-columns: 70px 1fr;
   align-items: center;
   height: 73px;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
   border-radius: 20px;
   background-color: #F6F6F6;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
@@ -156,6 +149,10 @@ h1, h2, h3, p {
 .restaurants__grid__container {
   display: grid;
   position: relative;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
   border-radius: 15px;
   background-color: white;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
@@ -165,6 +162,10 @@ h1, h2, h3, p {
   top: 15px;
   right: 15px;
   padding: 7px 10px 6px 9px;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
   border-radius: 2px;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
   background-color: #99E2D0;
@@ -177,6 +178,10 @@ h1, h2, h3, p {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
   border-radius: 15px 15px 0 0;
 }
 .restaurants__grid__text {
@@ -230,13 +235,17 @@ h1, h2, h3, p {
 .section__principale {
   position: relative;
   bottom: 75px;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
   border-radius: 40px 40px 0 0;
   padding: 0 13px 40px 13px;
   margin: 0 0 -75px 0;
   background-color: #F6F6F6;
 }
 .section__principale__header {
-  width: 320px;
+  display: grid;
   position: relative;
   margin: 0 auto 0 auto;
   justify-content: center;
@@ -248,20 +257,87 @@ h1, h2, h3, p {
 }
 .section__principale__title {
   height: 40px;
-  border: 3px solid #99E2D0;
+  width: 40px;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 3px;
+  border-left-width: 0;
+  border-style: solid;
+  border-color: #99E2D0;
+  margin: 0 0 12px 0;
 }
 .section__principale__cards {
   display: grid;
-  grid-gap: 12px;
+  grid-template-columns: 100%;
+  grid-gap: 40px;
 }
 .section__principale__menu {
   display: grid;
-  grid-template-columns: 287px 1fr;
+  grid-template-columns: 80% 1fr;
   grid-gap: 5px;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
   border-radius: 15px;
   padding: 15px;
+  position: relative;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
   background-color: white;
+}
+.section__principale .section__principale__menu:hover .section__principale__text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  animation-name: section__principale__text;
+  animation-duration: 1s;
+}
+.section__principale .section__principale__menu:hover .section__principale__check {
+  animation-name: img__check;
+  animation-duration: 1s;
+}
+.section__principale .section__principale__menu:hover .price {
+  position: relative;
+  animation-name: price;
+  animation-duration: 1s;
+}
+@keyframes section__principale__text {
+  0% {
+    width: 170px;
+  }
+  100% {
+    width: 170px;
+  }
+}
+@keyframes img__check {
+  0% {
+    opacity: 1;
+    right: -62.62px;
+  }
+  100% {
+    opacity: 1;
+    right: 0;
+  }
+}
+@keyframes price {
+  0% {
+    right: 15px;
+  }
+  100% {
+    right: 62.62px;
+  }
+}
+.section__principale__check {
+  position: absolute;
+  right: 0;
+  height: 72px;
+  opacity: 0;
+}
+.section__principale__text1 {
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .section__principale .price {
   display: grid;
@@ -274,7 +350,10 @@ h1, h2, h3, p {
 .section__principale__button {
   height: 50px;
   width: 186px;
-  border: none;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
   border-radius: 25px;
   background: linear-gradient(175deg, #9356DC, #FF79DA);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);

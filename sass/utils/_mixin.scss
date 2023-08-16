@@ -47,10 +47,15 @@
     padding: $padding-top $padding-left $padding-bottom $padding-right;    
 }
 
-@mixin border($border-height: null, $border-width: null, $border: null, $border-style: null, $border-color: null, $border-radius: null, $border-top: null, $border-right: null, $border-bottom: null, $border-left: null){
-    height: $border-height;
-    width: $border-width;
-    border: $border $border-style $border-color;
+@mixin border($border-height: null, $border-width: null, $border: null, $border-top-width: 0, $border-right-width: 0, $border-bottom-width: 0, $border-left-width: 0, $border-style: null, $border-color: null, $border-radius: null){
+    height: $border-height; 
+    width: $border-width; 
+    border-top-width: $border-top-width;
+    border-right-width: $border-right-width;
+    border-bottom-width: $border-bottom-width;
+    border-left-width: $border-left-width;
+    border-style: $border-style;
+    border-color: $border-color;
     border-radius: $border-radius;
 }
 
@@ -59,3 +64,48 @@
     text-decoration: $text-decoration;
 }
 
+@mixin box-shadow{
+    box-shadow: $box-shadow1;
+}
+
+@mixin animation_menu ($animation_menu: true){
+    @if $animation_menu{
+
+        .section__principale__text{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;            
+            animation-name: section__principale__text;
+            animation-duration: 1s; 
+        }
+
+        .section__principale__check{
+            animation-name: img__check;
+            animation-duration: 1s;
+        }  
+
+        .price{          
+            position: relative;         
+            animation-name: price;
+            animation-duration: 1s;                  
+        }
+    }
+
+    @keyframes section__principale__text{
+        0%{width: 170px}
+    
+        100%{width: 170px}
+    }
+
+    @keyframes img__check{
+        0%{opacity: 1 ; right: -62.62px}
+    
+        100%{opacity: 1; right: 0}
+    }
+    
+    @keyframes price{
+        0%{right: 15px}
+    
+        100%{right: 62.62px}
+    }   
+}

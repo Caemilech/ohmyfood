@@ -27,37 +27,22 @@ h1, h2, h3, p{
     @include margin(0 0 0 0);
 }
 
-/* Animation Coeur */
+/* Animation Coeur */ 
 
-.fa-heart__homepage{
-    @include position($position:absolute,$right:24px);
-    @include padding(23px 0 0 0);
+.fa-regular{
+    @include position($position:absolute,$right:24px); 
+    font-size: 25px;    
 }
 
-.fa-heart__full__homepage{
-    @include position($position:absolute,$right:24px);
-    @include padding(23px 0 0 0);
-    opacity: 0;
-    color: blue;
-}
-
-.fa-heart__full__homepage:hover{
+.fa-regular:active{
     opacity: 1;
-}    
-
-.fa-heart__menu{
-    @include position($position:absolute,$right:24px)
+    transition: all ease-in-out;
+    background-clip: text;
+    font-weight: 900;
+    background-image: linear-gradient(175deg, #9356DC, #FF79DA);
+    -webkit-text-fill-color: transparent;
 }
 
-.fa-heart__full{
-    @include position($position:absolute,$right:24px);
-    opacity: 0;
-    color: blue;
-}
-
-.fa-heart__full:hover{
-    opacity: 1;
-}    
 
 /* Page d'acceuil */
 
@@ -102,7 +87,7 @@ h1, h2, h3, p{
     }    
 
     &__button{
-        @include border($border-height: 50px, $border-width: 218px, $border:none, $border-radius: 25px);
+        @include border($border-height: 50px, $border:none, $border-width: 218px, $border-radius: 25px);
         background: linear-gradient(175deg, #9356DC, #FF79DA);
         box-shadow: $box_shadow_button;
         @include margin(0 auto 0 auto);
@@ -239,8 +224,8 @@ h1, h2, h3, p{
     @include margin(0 0 -75px 0);
     background-color: $background-color-secondary;
 
-    &__header{
-        width: 320px;       
+    &__header{         
+        @include grid1;
         @include position($position: relative);
         @include margin(0 auto 0 auto);
         @include position_vertical($justify-content: center);
@@ -252,21 +237,40 @@ h1, h2, h3, p{
     }
 
     &__title{
-        @include border($border-height: 40px, $border: 3px, $border-style: solid, $border-color: $color-menu-title);
+        @include border($border-height: 40px, $border-width: 40px, $border-bottom-width: 3px, $border-style: solid, $border-color: $color-menu-title);
+        @include margin (0 0 12px 0);
     }
 
     &__cards{
-        @include grid1($grid-gap: 12px);
+        @include grid1($grid-template-columns: 100%, $grid-gap: 40px);
     }
 
     &__menu{
-        @include grid1($grid-template-columns: 287px 1fr, $grid-gap: 5px);
+        @include grid1($grid-template-columns: 80% 1fr, $grid-gap: 5px);
         @include border($border-radius: 15px);
         @include padding(15px);
+        @include position($position:relative);
         box-shadow: $box-shadow2;
         background-color: $background-color-first;
     }
+
+    .section__principale__menu:hover{        
+        @include animation_menu($animation_menu: true);     
+    }
     
+    &__check{
+        @include position($position: absolute, $right: 0);
+        @include img($img_height: 72px);
+        opacity: 0;
+    }
+    
+    &__text1{
+        position: relative;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;    
+    }
+
     .price{
         @include grid1;
         @include grid__position($grid-row-start: 1, $grid-column-end: 3);
@@ -276,7 +280,7 @@ h1, h2, h3, p{
 }
 
 .section__principale__button{
-    @include border($border-height: 50px, $border-width: 186px, $border: none, $border-radius: 25px);
+    @include border($border-height: 50px, $border: none, $border-width: 186px, $border-radius: 25px);
     background: linear-gradient(175deg, #9356DC, #FF79DA);
     box-shadow: $box_shadow_button;
     @include margin(0 auto 0 auto)
