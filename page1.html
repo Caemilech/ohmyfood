@@ -13,120 +13,126 @@
         <title>La palette du goût</title>
     </head>
     <body>
-        <header class="header">
+        <header class="header__menu">
             <a href="index.html">
-                <img class="header__img" src="images/icones/Fleche.svg" alt="Retour en arrière">
+                <img class="header__arrow" src="images/icones/Fleche.svg" alt="Retour en arrière">
             </a>            
-            <img class="header__logo" src="images/logo/ohmyfood.svg" alt="Logo Ohmyfood">            
+            <img class="header__menu__logo" src="images/logo/ohmyfood.svg" alt="Logo Ohmyfood">            
         </header>
         <main>
-            <img class="main__img" src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg">
-            <section class="section__principale">
-                <div class="section__principale__header">
+            <img class="restaurant__img" src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg">
+            <section class="section__menu">
+                <div class="menu__title">
                     <img src="images/logo/La palette du goût.svg">
-                    <i class="fa-regular fa-heart"></i>                                            
+                    <i class="fa-regular fa-heart fa-heart__menu"></i>                                            
                 </div>
-                <div class="section__principale__grid">
+                <div class="menu__container">
                     <div>
-                        <h2 class="section__principale__title">Entrées</h2>
-                        <div class="section__principale__cards">
-                            <article class="section__principale__menu">
-                                <img class="section__principale__check" src="images/icones/Select button.svg" alt="Check Commande">
-                                <div>
-                                    <h3 class="section__principale__text">Fricassée d'escargots</h3>                                                               
-                                    <p class="section__principale__text">Au piment d'espelette</p>
-                                </div>
-                                <div class="price">
-                                    <p>25<span>€</span></p>      
-                                </div>                        
-                            </article>                     
-                            <article class="section__principale__menu">
-                                <img class="section__principale__check" src="images/icones/Select button.svg" alt="Check Commande">
-                                <h3 class="section__principale__text">Foie gras de canard mi-cuit</h3>  
-                                <div>
-                                                                                                 
-                                    <p class="section__principale__text section__principale__text1">Et ses copeaux de truffe noire</p>
-                                    <p>35<span>€</span></p>
-                                </div>
-                                                     
+                        <h2 class="menu__subtitle">Entrées</h2>
+                        <div class="menu__cards">
+                            <article class="menu__cards__container">
+                                <img class="menu__selected" src="images/icones/Select button.svg" alt="Check Commande">
+                                <div class="menu__text__title">
+                                    <h3 class="menu__text">Fricassée d'escargots</h3>
+                                </div>                             
+                                <div class="menu__texts">                                                                                                 
+                                    <p class="menu__text">Au piment d'espelette</p>
+                                    <p class="menu__price menu__text">25€</p>
+                                </div>                                                   
+                            </article>                                           
+                            <article class="menu__cards__container">
+                                <img class="menu__selected" src="images/icones/Select button.svg" alt="Check Commande">
+                                <div class="menu__text__title">
+                                    <h3 class="menu__text">Foie gras de canard mi-cuit</h3>
+                                </div>                             
+                                <div class="menu__texts">                                                                                                 
+                                    <p class="menu__text">Et ses copeaux de truffe noire</p>
+                                    <p class="menu__price menu__text">35€</p>
+                                </div>                                                     
                             </article>    
-                            <article class="section__principale__menu">
-                                <img class="section__principale__check" src="images/icones/Select button.svg" alt="Check Commande">
-                                <div>
-                                    <h3 class="section__principale__text">Oeuf au plat</h3>                                                               
-                                    <p class="section__principale__text">Assaisonné à la truffe sur lit de caviar</p>
-                                </div>
-                                <div class="price">
-                                    <p>20<span>€</span></p>      
-                                </div>                        
-                            </article>    
+                            <article class="menu__cards__container">
+                                <img class="menu__selected" src="images/icones/Select button.svg" alt="Check Commande">
+                                <div class="menu__text__title">
+                                    <h3 class="menu__text">Oeuf au plat</h3>
+                                </div>                             
+                                <div class="menu__texts">                                                                                                 
+                                    <p class="menu__text">Assaisonné à la truffe sur lit de caviar</p>
+                                    <p class="menu__price menu__text">20€</p>
+                                </div>                                                     
+                            </article>                                
                         </div>
-                    </div>                    
+                    </div>      
                     <div>
-                        <h2 class="section__principale__title">Plats</h2>
-                        <div class="section__principale__cards">
-                            <article class="section__principale__menu">
-                                <div>
-                                    <h3>Filet de boeuf aux herbes</h3>                                                               
-                                    <p>Accompagné de sa ribambelle de légumes</p>
-                                </div>
-                                <div class="price">
-                                    <p>40<span>€</span></p>      
-                                </div>                        
-                            </article>                     
-                            <article class="section__principale__menu">
-                                <div>
-                                    <h3>Parmentier de queue de boeuf</h3>                                                               
-                                    <p>À la truffe noire sur sa purée de panais</p>
-                                </div>
-                                <div class="price">
-                                    <p>35<span>€</span></p>      
-                                </div>                        
+                        <h2 class="menu__subtitle">Plats</h2>
+                        <div class="menu__cards">
+                            <article class="menu__cards__container">
+                                <img class="menu__selected" src="images/icones/Select button.svg" alt="Check Commande">
+                                <div class="menu__text__title">
+                                    <h3 class="menu__text">Filet de boeuf aux herbes</h3>
+                                </div>                             
+                                <div class="menu__texts">                                                                                                 
+                                    <p class="menu__text">Accompagné de sa ribambelle de légumes</p>
+                                    <p class="menu__price menu__text">40€</p>
+                                </div>                                                   
+                            </article>                                           
+                            <article class="menu__cards__container">
+                                <img class="menu__selected" src="images/icones/Select button.svg" alt="Check Commande">
+                                <div class="menu__text__title">
+                                    <h3 class="menu__text">Parmentier de queue de boeuf</h3>
+                                </div>                             
+                                <div class="menu__texts">                                                                                                 
+                                    <p class="menu__text">À la truffe noire sur sa purée de panais</p>
+                                    <p class="menu__price menu__text">35€</p>
+                                </div>                                                     
                             </article>    
-                            <article class="section__principale__menu">
-                                <div>
-                                    <h3>Filet de turbot</h3>                                                               
-                                    <p>Aux agrumes</p>
-                                </div>
-                                <div class="price">
-                                    <p>44<span>€</span></p>      
-                                </div>                        
-                            </article>    
+                            <article class="menu__cards__container">
+                                <img class="menu__selected" src="images/icones/Select button.svg" alt="Check Commande">
+                                <div class="menu__text__title">
+                                    <h3 class="menu__text">Filet de turbot</h3>
+                                </div>                             
+                                <div class="menu__texts">                                                                                                 
+                                    <p class="menu__text">Aux agrumes</p>
+                                    <p class="menu__price menu__text">44€</p>
+                                </div>                                                     
+                            </article>                                
                         </div>
-                    </div>
+                    </div>                                 
                     <div>
-                        <h2 class="section__principale__title">Desserts</h2>
-                        <div class="section__principale__cards">
-                            <article class="section__principale__menu">
-                                <div>
-                                    <h3>Paris-Brest</h3>
-                                    <p>Revisité</p>
-                                </div>
-                                <div class="price">
-                                    <p>18<span>€</span></p>
-                                </div>
-                            </article>
-                            <article class="section__principale__menu">
-                                <div>
-                                    <h3>Macaron au chocolat d'exception</h3>
-                                    <p>Et glace à la vanille de Madagascar</p>
-                                </div>
-                                <div class="price">
-                                    <p>22<span>€</span></p>
-                                </div>
-                            </article>
-                            <article class="section__principale__menu">
-                                <div>
-                                    <h3>Mousse au chocolat</h3>
-                                    <p>Au piment d'Espelette et à la truffe noire</p>
-                                </div>
-                                <div class="price">
-                                    <p>23<span>€</span></p>
-                                </div>
-                            </article>
+                        <h2 class="menu__subtitle">Desserts</h2>
+                        <div class="menu__cards">
+                            <article class="menu__cards__container">
+                                <img class="menu__selected" src="images/icones/Select button.svg" alt="Check Commande">
+                                <div class="menu__text__title">
+                                    <h3 class="menu__text">Paris-Brest</h3>
+                                </div>                             
+                                <div class="menu__texts">                                                                                                 
+                                    <p class="menu__text">Revisité</p>
+                                    <p class="menu__price menu__text">18€</p>
+                                </div>                                                   
+                            </article>                                           
+                            <article class="menu__cards__container">
+                                <img class="menu__selected" src="images/icones/Select button.svg" alt="Check Commande">
+                                <div class="menu__text__title">
+                                    <h3 class="menu__text">Macaron au chocolat d'exception</h3>
+                                </div>                             
+                                <div class="menu__texts">                                                                                                 
+                                    <p class="menu__text">Et glace à la vanille de Madagascar</p>
+                                    <p class="menu__price menu__text">22€</p>
+                                </div>                                                     
+                            </article>    
+                            <article class="menu__cards__container">
+                                <img class="menu__selected" src="images/icones/Select button.svg" alt="Check Commande">
+                                <div class="menu__text__title">
+                                    <h3 class="menu__text">Mousse au chocolat</h3>
+                                </div>                             
+                                <div class="menu__texts">                                                                                                 
+                                    <p class="menu__text">Au piment d'Espelette et à la truffe noire</p>
+                                    <p class="menu__price menu__text ">23€</p>
+                                </div>                                                     
+                            </article>                                
                         </div>
-                    </div>
-                    <button class="section__principale__button">
+                    </div>                        
+                    <button class="menu__button">
                         <a href="#">Commander</a>
                     </button>
                 </div>                          

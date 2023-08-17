@@ -71,39 +71,39 @@
 @mixin animation_menu ($animation_menu: true){
     @if $animation_menu{
 
-        .section__principale__text{
+        .menu__text{
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;            
-            animation-name: section__principale__text;
+            animation-name: menu__text;
             animation-duration: 1s; 
         }
 
-        .section__principale__check{
-            animation-name: img__check;
+        .menu__selected{
+            animation-name: menu__selected;
             animation-duration: 1s;
         }  
 
-        .price{          
+        .menu__price{          
             position: relative;         
-            animation-name: price;
+            animation-name: menu__price;
             animation-duration: 1s;                  
         }
     }
 
-    @keyframes section__principale__text{
-        0%{width: 170px}
+    @keyframes menu__text{
+        0%{width: 60%}
     
-        100%{width: 170px}
+        100%{width: 60%}
     }
 
-    @keyframes img__check{
+    @keyframes menu__selected{
         0%{opacity: 1 ; right: -62.62px}
     
         100%{opacity: 1; right: 0}
     }
     
-    @keyframes price{
+    @keyframes menu__price{
         0%{right: 15px}
     
         100%{right: 62.62px}

@@ -12,7 +12,7 @@
 @import "utils/mixin";
 @import "utils/variables";
 
-/* Général */
+/***** Général *****/
 
 body{
     @include margin(0 0 0 0);
@@ -27,14 +27,14 @@ h1, h2, h3, p{
     @include margin(0 0 0 0);
 }
 
-/* Animation Coeur */ 
+/***** Animation Coeur *****/ 
 
-.fa-regular{
+.fa-heart__restaurants{
     @include position($position:absolute,$right:24px); 
     font-size: 25px;    
 }
 
-.fa-regular:active{
+.fa-heart__restaurants:hover, .fa-heart__menu:hover{
     opacity: 1;
     transition: all ease-in-out;
     background-clip: text;
@@ -43,141 +43,148 @@ h1, h2, h3, p{
     -webkit-text-fill-color: transparent;
 }
 
+.fa-heart__menu{
+    @include grid1;
+    @include margin(0 auto 0 auto);
+    font-size: 25px;
+}
 
-/* Page d'acceuil */
+/******* Page d'acceuil *******/
 
-/* Header */
+/*** Header ***/
 
 .header__homepage{
-
     @include grid1($grid-template-rows: 63px);
     box-shadow: $box-shadow1; 
     @include position_horizontal($align-items: center);
-
-    &__logo{
-        @include margin(0 auto 0 auto);
-    }
 }
 
-/* Section Location */
+.header__homepage__logo{
+    @include margin(0 auto 0 auto);
+}
 
-.location{
+/*** Section Location ***/
+
+.section__location{
     @include grid1($grid-template-rows: 50px, $grid-template-columns: 16px 109px, $grid-gap: 17px);
     @include position_vertical($justify-content: center);
     @include position_horizontal($align-items: center);
     background-color: $background-color-location;
+}
     
-    &__search input[type=text]{
-        @include border($border-height: 19px, $border-width: 109px, $border-style: none);
-        background-color: $background-color-location;
-    }    
+.location__search input[type=text]{
+    @include border($border-height: 19px, $border-width: 109px, $border-style: none);
+    background-color: $background-color-location;
+}    
+
+.fa-location-dot{
+    color: $background-color-footer;
 }
 
-/* Section Exploration */
+/*** Section Exploration ***/
 
-.exploration{
+.section__exploration {
     @include grid1($grid-gap: 27px);
     @include padding(39px 20px 57px 20px);
     @include position_horizontal($align-items: center);
     text-align: center;
     background-color: #F6F6F6;
-    
-    &__text{
-        @include grid1($grid-gap: 5px)
-    }    
-
-    &__button{
-        @include border($border-height: 50px, $border:none, $border-width: 218px, $border-radius: 25px);
-        background: linear-gradient(175deg, #9356DC, #FF79DA);
-        box-shadow: $box_shadow_button;
-        @include margin(0 auto 0 auto);
-    }
-
-    .exploration__button:hover{
-        opacity: 0.8;
-        color: $background-color-first;
-    }
 }
 
-/* Section Fonctionnement*/
+.exploration__text {
+    @include grid1($grid-gap: 5px)
+}
 
-.fonctionnement{
+.exploration__button {
+    @include border($border-height: 50px, $border: none, $border-width: 218px, $border-radius: 25px);
+    background: linear-gradient(175deg, #9356DC, #FF79DA);
+    box-shadow: $box_shadow_button;
+    @include margin(0 auto 0 auto);
+}
+
+.exploration__button:hover, .menu__button:hover{
+    opacity: 0.8;
+    color: $background-color-first;
+}
+
+/*** Section Fonctionnement ***/
+
+.section__fonctionnement{
     @include grid1($grid-gap: 20px);
     @include margin(48px 20px 68px 20px);
-
-    &__grid{
-        @include grid1($grid-gap: 25px);
-
-        &__img{ 
-            @include position($position: relative);
-
-            &__number{
-                @include position($position: absolute, $top: 24px);
-            }
-        }
-
-        &__container{
-            @include grid1($grid-template-rows: 73px, $grid-template-columns: 70px 1fr);
-            @include position_horizontal($align-items: center);
-            @include border($border-height: 73px, $border-radius: 20px);
-            background-color: $background-color-secondary;
-            box-shadow: $box-shadow2;
-            @include margin($margin-left: 0 0 0 12px);
-        }       
-
-        &__icon{
-            @include grid1;
-            @include position_vertical($justify-content: center);
-        }
-       
-    }
 }
- 
 
-/* Section Restaurants */
+.fonctionnement__container{
+    @include grid1($grid-gap: 25px);
+}
 
-.restaurants{
+.fonctionnement__img{ 
+    @include position($position: relative);
+}
+
+.fonctionnement__img__number{
+    @include position($position: absolute, $top: 24px);
+}
+        
+.fonctionnement__cards{
+    @include grid1($grid-template-rows: 73px, $grid-template-columns: 70px 1fr);
+    @include position_horizontal($align-items: center);
+    @include border($border-height: 73px, $border-radius: 20px);
+    background-color: $background-color-secondary;
+    box-shadow: $box-shadow2;
+    @include margin($margin-left: 0 0 0 12px);
+}       
+
+.fonctionnement__icons{
+    @include grid1;
+    @include position_vertical($justify-content: center);
+}        
+
+/*** Section Restaurants ***/
+
+.section__restaurants {
     @include grid1($grid-gap: 20px);
     @include padding(54px 18px 66px 18px);
-    background-color: $background-color-secondary;   
-    
-    &__grid{
-        @include grid1($grid-gap: 18px);
-
-        &__links{
-            @include links($color_links: black); 
-        }         
-        
-        &__container {
-            @include grid1;
-            @include position($position: relative);     
-            @include border($border-radius: 15px);
-            background-color: $background-color-first;
-            box-shadow: $box-shadow2;
-        }   
-        
-        &__new{
-            @include position($position: absolute, $top: 15px, $right: 15px);
-            @include padding(7px 10px 6px 9px);
-            @include border($border-radius: 2px);
-            box-shadow: $box-shadow1;
-            background-color: $color-menu-title;
-            color: $color-restaurants_grid_new;
-        }
-
-        &__img{
-            @include img($img_height: 175px, $img_width: 100%, $object-fit: cover, $object-position: center);
-            @include border($border-radius: 15px 15px 0 0)
-        } 
-        
-        &__text{
-            @include grid1($grid-gap: 5px);
-            @include margin(10px 60px 12px 13px);
-        }
-    }
+    background-color: $background-color-secondary;
 }
 
-/* Section Footer */
+.restaurants__container {
+    @include grid1($grid-gap: 18px);
+}
+
+.restaurants__links__menu {
+    @include links($color_links: black);
+}
+
+.restaurants__cards {
+    @include grid1;
+    @include position($position: relative);
+    @include border($border-radius: 15px);
+    background-color: $background-color-first;
+    box-shadow: $box-shadow2;
+}
+
+.restaurants__new__menu {
+    @include position($position: absolute, $top: 15px, $right: 15px);
+    @include padding(7px 10px 6px 9px);
+    @include border($border-radius: 2px);
+    box-shadow: $box-shadow1;
+    background-color: $color-menu-title;
+    color: $color-restaurants_grid_new;
+}
+
+.restaurants__img {
+    @include img($img_height: 175px, $img_width: 100%, $object-fit: cover, $object-position: center);
+    @include border($border-radius: 15px 15px 0 0)
+}
+
+.restaurants__text {
+    @include grid1($grid-gap: 5px);
+    @include margin(10px 60px 12px 13px);
+}
+
+
+/***** Footer *****/
 
 .footer{
     @include grid1($grid-gap: 22px);
@@ -190,96 +197,105 @@ h1, h2, h3, p{
     }
 }
 
-/* Page 1 */
+/******* CSS Page Menu *******/
 
-/* Header */
+/***** Header Menu *****/
 
-.header{
+.header__menu{
     @include grid1($grid-template-rows: 63px, $grid-template-columns: 89px 1fr);
     @include position_horizontal($align-items: center);
     box-shadow: $box-shadow1;
-
-    &__img{
-        @include padding($padding-left: 0 0 0 17px);
-    }
-
-    &__logo{
-        @include margin(0 auto 0 auto);
-        @include padding(0 34px 0 0);
-    }
 }
 
-/* Main */
+.header__arrow{
+    @include padding($padding-left: 0 0 0 17px);
+}
 
-.main__img{
+.header__menu__logo{
+    @include margin(0 auto 0 auto);
+    @include padding(0 34px 0 0);
+}
+
+
+/***** Main *****/
+
+.restaurant__img{
     @include img($img_height: 275px, $img_width: 100%, $object-fit: cover, $object-position: center);
 }
 
-/* Section Principale */
+/*** Section Menu ***/
 
-.section__principale{
+.section__menu {
     @include position($position: relative, $bottom: 75px);
     @include border ($border-radius: 40px 40px 0 0);
     @include padding(0 13px 40px 13px);
     @include margin(0 0 -75px 0);
     background-color: $background-color-secondary;
-
-    &__header{         
-        @include grid1;
-        @include position($position: relative);
-        @include margin(0 auto 0 auto);
-        @include position_vertical($justify-content: center);
-        @include padding(32px 17px 40px 17px);           
-    }
-    
-    &__grid{
-        @include grid1($grid-gap: 40px);
-    }
-
-    &__title{
-        @include border($border-height: 40px, $border-width: 40px, $border-bottom-width: 3px, $border-style: solid, $border-color: $color-menu-title);
-        @include margin (0 0 12px 0);
-    }
-
-    &__cards{
-        @include grid1($grid-template-columns: 100%, $grid-gap: 40px);
-    }
-
-    &__menu{
-        @include grid1($grid-template-columns: 80% 1fr, $grid-gap: 5px);
-        @include border($border-radius: 15px);
-        @include padding(15px);
-        @include position($position:relative);
-        box-shadow: $box-shadow2;
-        background-color: $background-color-first;
-    }
-
-    .section__principale__menu:hover{        
-        @include animation_menu($animation_menu: true);     
-    }
-    
-    &__check{
-        @include position($position: absolute, $right: 0);
-        @include img($img_height: 72px);
-        opacity: 0;
-    }
-    
-    &__text1{
-        position: relative;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;    
-    }
-
-    .price{
-        @include grid1;
-        @include grid__position($grid-row-start: 1, $grid-column-end: 3);
-        @include position_horizontal($align-items: center);
-        @include position_vertical($justify-content: end);
-    }
 }
 
-.section__principale__button{
+.menu__title {
+    @include grid1($grid-template-columns: 1fr 1fr, $grid-gap: 20px);
+    @include position($position: relative);
+    @include margin(0 auto 0 auto);
+    @include position_vertical($justify-content: center);
+    @include padding(32px 17px 40px 17px);
+}
+
+.menu__container {
+    @include grid1($grid-gap: 40px);
+}
+
+.menu__subtitle {
+    @include border($border-height: 40px, $border-width: 40px, $border-bottom-width: 3px, $border-style: solid, $border-color: $color-menu-title);
+    @include margin (0 0 12px 0);
+}
+
+.menu__cards {
+    @include grid1($grid-template-columns: 100%, $grid-gap: 40px);
+}
+
+.menu__cards__container {
+    @include grid1($grid-template-rows: 1fr 80%, $grid-gap: 5px);
+    @include border($border-radius: 15px);
+    @include padding(15px);
+    @include position($position: relative);
+    box-shadow: $box-shadow2;
+    background-color: $background-color-first;
+    overflow: hidden;
+}
+
+.menu__cards__container:hover {
+    @include animation_menu($animation_menu: true);
+}
+
+.menu__selected {
+    @include position($position: absolute, $right: 0);
+    @include img($img_height: 77px);
+    opacity: 0;
+}
+
+.menu__text__title {
+    @include grid1;
+}
+
+.menu__text {
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.menu__texts {
+    @include grid1($grid-template-columns: 80% 1fr);
+}
+
+.menu__price {
+    @include grid1;
+    @include position_vertical($justify-content: end);
+    @include grid__position($grid-column-end: 3);
+}
+
+.menu__button {
     @include border($border-height: 50px, $border: none, $border-width: 186px, $border-radius: 25px);
     background: linear-gradient(175deg, #9356DC, #FF79DA);
     box-shadow: $box_shadow_button;
@@ -292,14 +308,20 @@ h1, h2, h3, p{
 
 /* Responsive Section Principale */
 
+@media (max-width: 370px){
+    .menu__title{
+        @include grid1($grid-template-columns: 1fr, $grid-gap: 0);
+    }  
+}
+
 @media (min-width: 768px){
 
-    .section__principale{
+    .section__menu{
         max-width: 1024px;
         @include margin(40px auto 40px auto);
     }
 
-    .section__principale__grid{
+    .menu__container{
         max-width: 768px;
         @include margin(0 auto 0 auto);
     }
@@ -340,7 +362,7 @@ h1, h2, h3, p{
 
 @media (min-width: 1024px){     
 
-    .exploration{
+    .section__exploration{
         @include grid1($grid-gap: 18px);
         @include padding(30px 0 30px 0px);
     }
@@ -354,12 +376,13 @@ h1, h2, h3, p{
 
 @media (min-width: 1024px){   
     
-    .fonctionnement{
+    .section__fonctionnement{
         max-width: 1024px;
         @include margin(50px auto 50px auto);
+        @include padding(0 20px 0 20px);
     }
 
-    .fonctionnement__grid{
+    .fonctionnement__container{
         @include grid1($grid-template-columns: 1fr 1fr 1fr, $grid-gap: 25px);
     }
 }
@@ -368,14 +391,14 @@ h1, h2, h3, p{
 
 @media (min-width: 1024px){     
 
-    .restaurants{        
+    .section__restaurants{        
         max-width: 1024px;        
         @include grid1($grid-gap: 18px);
-        @include padding(30px 0 30px 0px);
+        @include padding(30px 20px 30px 20px);
         @include margin (0 auto 0 auto);
     }
 
-    .restaurants__grid{
+    .restaurants__container{
         @include grid1($grid-template-columns: 1fr 1fr, $grid-gap: 50px 100px);
     }
 }
