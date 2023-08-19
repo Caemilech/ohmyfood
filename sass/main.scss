@@ -16,7 +16,7 @@
 
 body{
     @include margin(0 0 0 0);
-    font-family: "Roboto", sans-serif;
+    @include font($font-family: ("Roboto", sans-serif));
 }
 
 a{
@@ -31,22 +31,21 @@ h1, h2, h3, p{
 
 .fa-heart__restaurants{
     @include position($position:absolute,$right:24px); 
-    font-size: 25px;    
+    @include font($font-size: 25px);
 }
 
 .fa-heart__restaurants:hover, .fa-heart__menu:hover{
-    opacity: 1;
+    @include opacity(1);       
+    @include font($font-weight: 900);
+    @include background($background-image: linear-gradient(175deg, #9356DC, #FF79DA), $background-clip: text);
     transition: all ease-in-out;
-    background-clip: text;
-    font-weight: 900;
-    background-image: linear-gradient(175deg, #9356DC, #FF79DA);
     -webkit-text-fill-color: transparent;
 }
 
 .fa-heart__menu{
     @include grid1;
     @include margin(0 auto 0 auto);
-    font-size: 25px;
+    @include font($font-size: 25px);
 }
 
 /******* Page d'acceuil *******/
@@ -55,7 +54,8 @@ h1, h2, h3, p{
 
 .header__homepage{
     @include grid1($grid-template-rows: 63px);
-    box-shadow: $box-shadow1; 
+    @include border($box-shadow: $box-shadow1);
+    @include position($position: relative);
     @include position_horizontal($align-items: center);
 }
 
@@ -69,16 +69,17 @@ h1, h2, h3, p{
     @include grid1($grid-template-rows: 50px, $grid-template-columns: 16px 109px, $grid-gap: 17px);
     @include position_vertical($justify-content: center);
     @include position_horizontal($align-items: center);
-    background-color: $background-color-location;
+    @include background($background-color: $background-color-location);
 }
     
 .location__search input[type=text]{
-    @include border($border-height: 19px, $border-width: 109px, $border-style: none);
-    background-color: $background-color-location;
+    @include height($height: 19px);
+    @include border($border-style: none);
+    @include background($background-color: $background-color-location)
 }    
 
 .fa-location-dot{
-    color: $background-color-footer;
+    @include color($background-color-footer)    
 }
 
 /*** Section Exploration ***/
@@ -87,8 +88,8 @@ h1, h2, h3, p{
     @include grid1($grid-gap: 27px);
     @include padding(39px 20px 57px 20px);
     @include position_horizontal($align-items: center);
-    text-align: center;
-    background-color: #F6F6F6;
+    @include text($text-align: center);
+    @include background($background-color: $background-color-secondary);
 }
 
 .exploration__text {
@@ -96,15 +97,16 @@ h1, h2, h3, p{
 }
 
 .exploration__button {
-    @include border($border-height: 50px, $border: none, $border-width: 218px, $border-radius: 25px);
-    background: linear-gradient(175deg, #9356DC, #FF79DA);
-    box-shadow: $box_shadow_button;
+    @include height($height: 50px);
+    @include width($width: 218px);
+    @include border($border-style: none, $border-radius: 25px, $box-shadow: $box-shadow_button);
+    @include background($background-image: linear-gradient(175deg, #9356DC, #FF79DA));    
     @include margin(0 auto 0 auto);
 }
 
 .exploration__button:hover, .menu__button:hover{
-    opacity: 0.8;
-    color: $background-color-first;
+    @include opacity (0.8);
+    @include color($background-color-first);
 }
 
 /*** Section Fonctionnement ***/
@@ -129,9 +131,9 @@ h1, h2, h3, p{
 .fonctionnement__cards{
     @include grid1($grid-template-rows: 73px, $grid-template-columns: 70px 1fr);
     @include position_horizontal($align-items: center);
-    @include border($border-height: 73px, $border-radius: 20px);
-    background-color: $background-color-secondary;
-    box-shadow: $box-shadow2;
+    @include height($height: 73px);
+    @include border($border-radius: 20px, $box-shadow: $box-shadow2);
+    @include background($background-color: $background-color-secondary);
     @include margin($margin-left: 0 0 0 12px);
 }       
 
@@ -145,7 +147,7 @@ h1, h2, h3, p{
 .section__restaurants {
     @include grid1($grid-gap: 20px);
     @include padding(54px 18px 66px 18px);
-    background-color: $background-color-secondary;
+    @include background($background-color: $background-color-secondary);
 }
 
 .restaurants__container {
@@ -159,22 +161,22 @@ h1, h2, h3, p{
 .restaurants__cards {
     @include grid1;
     @include position($position: relative);
-    @include border($border-radius: 15px);
-    background-color: $background-color-first;
-    box-shadow: $box-shadow2;
+    @include border($border-radius: 15px, $box-shadow: $box-shadow2);
+    @include background($background-color: $background-color-first);
 }
 
 .restaurants__new__menu {
     @include position($position: absolute, $top: 15px, $right: 15px);
     @include padding(7px 10px 6px 9px);
-    @include border($border-radius: 2px);
-    box-shadow: $box-shadow1;
-    background-color: $color-menu-title;
-    color: $color-restaurants_grid_new;
+    @include border($border-radius: 2px, $box-shadow: $box-shadow1);
+    @include background($background-color: $color-menu-title);
+    @include color($color-restaurants_grid_new);
 }
 
 .restaurants__img {
-    @include img($img_height: 175px, $img_width: 100%, $object-fit: cover, $object-position: center);
+    @include height($height: 175px);
+    @include width($width: 100%);
+    @include img($object-fit: cover, $object-position: center);
     @include border($border-radius: 15px 15px 0 0)
 }
 
@@ -189,22 +191,22 @@ h1, h2, h3, p{
 .footer{
     @include grid1($grid-gap: 22px);
     @include padding(22px 25px 22px 25px);
-    background-color: $background-color-footer;
+    @include background($background-color: $background-color-footer);
+}
     
-    &__grid{
-        @include grid1($grid-template-rows: 19px, $grid-gap: 7px); 
-        color: $background-color-first;
-    }
+.footer__container{
+    @include grid1($grid-template-rows: 19px, $grid-gap: 7px); 
+    @include color($background-color-first);
 }
 
-/******* CSS Page Menu *******/
+/******* Page Menu *******/
 
 /***** Header Menu *****/
 
 .header__menu{
-    @include grid1($grid-template-rows: 63px, $grid-template-columns: 89px 1fr);
+    @include grid1($grid-template-rows: 63px, $grid-template-columns: 89px 1fr 89px);
     @include position_horizontal($align-items: center);
-    box-shadow: $box-shadow1;
+    @include border($box-shadow: $box-shadow1);
 }
 
 .header__arrow{
@@ -213,14 +215,14 @@ h1, h2, h3, p{
 
 .header__menu__logo{
     @include margin(0 auto 0 auto);
-    @include padding(0 34px 0 0);
 }
-
 
 /***** Main *****/
 
 .restaurant__img{
-    @include img($img_height: 275px, $img_width: 100%, $object-fit: cover, $object-position: center);
+    @include height($height: 275px);
+    @include width($width: 100%);
+    @include img($object-fit: cover, $object-position: center);
 }
 
 /*** Section Menu ***/
@@ -230,13 +232,11 @@ h1, h2, h3, p{
     @include border ($border-radius: 40px 40px 0 0);
     @include padding(0 13px 40px 13px);
     @include margin(0 0 -75px 0);
-    background-color: $background-color-secondary;
+    @include background($background-color: $background-color-secondary);
 }
 
 .menu__title {
-    @include grid1($grid-template-columns: 1fr 1fr, $grid-gap: 20px);
-    @include position($position: relative);
-    @include margin(0 auto 0 auto);
+    @include grid1($grid-template-columns: 263px 25px, $grid-gap: 20px);   
     @include position_vertical($justify-content: center);
     @include padding(32px 17px 40px 17px);
 }
@@ -246,8 +246,10 @@ h1, h2, h3, p{
 }
 
 .menu__subtitle {
-    @include border($border-height: 40px, $border-width: 40px, $border-bottom-width: 3px, $border-style: solid, $border-color: $color-menu-title);
-    @include margin (0 0 12px 0);
+    @include height($height: 40px);
+    @include width($width: 40px);
+    @include border($border-width: 0 0 3px 0 , $border-style: solid, $border-color: $color-menu-title);
+    @include margin (0 0 12px 0);  
 }
 
 .menu__cards {
@@ -256,12 +258,11 @@ h1, h2, h3, p{
 
 .menu__cards__container {
     @include grid1($grid-template-rows: 1fr 80%, $grid-gap: 5px);
-    @include border($border-radius: 15px);
+    @include border($border-radius: 15px, $box-shadow: $box-shadow2);
     @include padding(15px);
     @include position($position: relative);
-    box-shadow: $box-shadow2;
-    background-color: $background-color-first;
-    overflow: hidden;
+    @include background($background-color: $background-color-first);
+    @include text_management($overflow: hidden);
 }
 
 .menu__cards__container:hover {
@@ -270,8 +271,8 @@ h1, h2, h3, p{
 
 .menu__selected {
     @include position($position: absolute, $right: 0);
-    @include img($img_height: 77px);
-    opacity: 0;
+    @include height($height: 77px);
+    @include opacity(0)
 }
 
 .menu__text__title {
@@ -279,10 +280,7 @@ h1, h2, h3, p{
 }
 
 .menu__text {
-    position: relative;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    @include text_management($overflow: hidden, $text-overflow: ellipsis, $white-space: nowrap);
 }
 
 .menu__texts {
@@ -291,128 +289,116 @@ h1, h2, h3, p{
 
 .menu__price {
     @include grid1;
+    @include position($position: relative);
     @include position_vertical($justify-content: end);
     @include grid__position($grid-column-end: 3);
 }
 
 .menu__button {
-    @include border($border-height: 50px, $border: none, $border-width: 186px, $border-radius: 25px);
-    background: linear-gradient(175deg, #9356DC, #FF79DA);
-    box-shadow: $box_shadow_button;
+    @include height($height: 50px);
+    @include width($width: 186px);
+    @include border($border-style: none, $border-radius: 25px, $box-shadow: $box-shadow_button);
+    @include background($background-image: linear-gradient(175deg, #9356DC, #FF79DA));    
     @include margin(0 auto 0 auto)
 }
 
-/* Responsive Tablet */
-
-/* Responsive Menu */
-
-/* Responsive Section Principale */
+/*** Section Menu ***/
 
 @media (max-width: 370px){
     .menu__title{
         @include grid1($grid-template-columns: 1fr, $grid-gap: 0);
     }  
-}
+} 
 
-@media (min-width: 768px){
+/***** Responsive  *****/
+
+@media (min-width: 768px) {
+
+    /*** Section Menu ***/
 
     .section__menu{
-        max-width: 1024px;
-        @include margin(40px auto 40px auto);
+        @include width($max-width: 768px);
+        @include margin(0 auto -75px auto);
     }
 
     .menu__container{
-        max-width: 768px;
         @include margin(0 auto 0 auto);
     }
-}
-
-@media (min-width: 768px){    
+    
+    /*** Section Footer ***/
 
     .footer{
         @include grid1($grid-gap: 16px);
         @include padding(30px 25px 30px 25px);
     }     
 
-    .footer__grid{
+    .footer__container{
         @include grid1($grid-template-columns: 191px 191px 130px 130px, $grid-gap: 7px); 
         @include position_horizontal($align-items: end);
     }    
 
-    .footer__grid__text{
+    .footer__text{
         @include grid1($grid-template-columns: 13px 178px, $grid-gap: 11px);
         @include position_horizontal($align-items: center);              
     }
 }
 
-/* Responsive Desktop */
+/***** Responsive Desktop *****/
 
-/* Responsive Page d'Acceuil*/
+@media (min-width: 1024px){
 
-/* Responsive Header */
+    /**** Responsive Page d'Acceuil ****/
 
-@media (min-width: 1024px){     
+    /*** Header ***/
 
     .header__homepage{
         @include grid1($grid-template-rows: 96px);
-    }
-}
+    }        
 
-/* Responsive Section Exploration */
-
-@media (min-width: 1024px){     
-
+    /*** Section Exploration ***/
+    
     .section__exploration{
         @include grid1($grid-gap: 18px);
         @include padding(30px 0 30px 0px);
     }
-
+    
     .exploration__text{
         @include grid1($grid-gap: 18px);
     }   
-}
-
-/* Responsive Section Fonctionnement */
-
-@media (min-width: 1024px){   
-    
+            
+    /*** Section Fonctionnement ***/
+     
     .section__fonctionnement{
-        max-width: 1024px;
         @include margin(50px auto 50px auto);
         @include padding(0 20px 0 20px);
     }
-
+    
     .fonctionnement__container{
         @include grid1($grid-template-columns: 1fr 1fr 1fr, $grid-gap: 25px);
     }
-}
-
-/* Responsive Section Restaurants */
-
-@media (min-width: 1024px){     
+    
+    /*** Section Restaurants ***/ 
 
     .section__restaurants{        
-        max-width: 1024px;        
         @include grid1($grid-gap: 18px);
         @include padding(30px 20px 30px 20px);
         @include margin (0 auto 0 auto);
     }
-
+    
     .restaurants__container{
         @include grid1($grid-template-columns: 1fr 1fr, $grid-gap: 50px 100px);
-    }
-}
+    }        
 
-@media (min-width: 1024px){ 
-    
-    .footer__img {
+    /*** Section Footer ***/
+   
+    .footer__logo {
         @include grid1;
         @include grid__position($grid-row-start: 1, $grid-column-end: 3);  
         @include position_horizontal($align-items: end);
         @include position_vertical($justify-content: start);
     }
-
-    .footer__grid{
+    
+    .footer__container{
         @include grid1($grid-template-rows: 54px, $grid-template-columns: 191px 191px 130px 130px, $grid-gap: 7px); 
         @include position_vertical($justify-content: end);
     }

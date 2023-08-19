@@ -23,11 +23,11 @@ h1, h2, h3, p {
 
 .fa-heart__restaurants:hover, .fa-heart__menu:hover {
   opacity: 1;
-  transition: all ease-in-out;
-  -webkit-background-clip: text;
-          background-clip: text;
   font-weight: 900;
   background-image: linear-gradient(175deg, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+          background-clip: text;
+  transition: all ease-in-out;
   -webkit-text-fill-color: transparent;
 }
 
@@ -43,6 +43,7 @@ h1, h2, h3, p {
   display: grid;
   grid-template-rows: 63px;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  position: relative;
   align-items: center;
 }
 
@@ -63,11 +64,6 @@ h1, h2, h3, p {
 
 .location__search input[type=text] {
   height: 19px;
-  width: 109px;
-  border-top-width: 0;
-  border-right-width: 0;
-  border-bottom-width: 0;
-  border-left-width: 0;
   border-style: none;
   background-color: #EAEAEA;
 }
@@ -94,13 +90,10 @@ h1, h2, h3, p {
 .exploration__button {
   height: 50px;
   width: 218px;
-  border-top-width: 0;
-  border-right-width: 0;
-  border-bottom-width: 0;
-  border-left-width: 0;
+  border-style: none;
   border-radius: 25px;
-  background: linear-gradient(175deg, #9356DC, #FF79DA);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  background-image: linear-gradient(175deg, #9356DC, #FF79DA);
   margin: 0 auto 0 auto;
 }
 
@@ -136,13 +129,9 @@ h1, h2, h3, p {
   grid-template-columns: 70px 1fr;
   align-items: center;
   height: 73px;
-  border-top-width: 0;
-  border-right-width: 0;
-  border-bottom-width: 0;
-  border-left-width: 0;
   border-radius: 20px;
-  background-color: #F6F6F6;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+  background-color: #F6F6F6;
   margin: 0 0 0 12px;
 }
 
@@ -172,13 +161,9 @@ h1, h2, h3, p {
 .restaurants__cards {
   display: grid;
   position: relative;
-  border-top-width: 0;
-  border-right-width: 0;
-  border-bottom-width: 0;
-  border-left-width: 0;
   border-radius: 15px;
-  background-color: white;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+  background-color: white;
 }
 
 .restaurants__new__menu {
@@ -186,10 +171,6 @@ h1, h2, h3, p {
   top: 15px;
   right: 15px;
   padding: 7px 10px 6px 9px;
-  border-top-width: 0;
-  border-right-width: 0;
-  border-bottom-width: 0;
-  border-left-width: 0;
   border-radius: 2px;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
   background-color: #99E2D0;
@@ -203,10 +184,6 @@ h1, h2, h3, p {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-  border-top-width: 0;
-  border-right-width: 0;
-  border-bottom-width: 0;
-  border-left-width: 0;
   border-radius: 15px 15px 0 0;
 }
 
@@ -223,19 +200,20 @@ h1, h2, h3, p {
   padding: 22px 25px 22px 25px;
   background-color: #353535;
 }
-.footer__grid {
+
+.footer__container {
   display: grid;
   grid-template-rows: 19px;
   grid-gap: 7px;
   color: white;
 }
 
-/******* CSS Page Menu *******/
+/******* Page Menu *******/
 /***** Header Menu *****/
 .header__menu {
   display: grid;
   grid-template-rows: 63px;
-  grid-template-columns: 89px 1fr;
+  grid-template-columns: 89px 1fr 89px;
   align-items: center;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
 }
@@ -246,7 +224,6 @@ h1, h2, h3, p {
 
 .header__menu__logo {
   margin: 0 auto 0 auto;
-  padding: 0 34px 0 0;
 }
 
 /***** Main *****/
@@ -263,10 +240,6 @@ h1, h2, h3, p {
 .section__menu {
   position: relative;
   bottom: 75px;
-  border-top-width: 0;
-  border-right-width: 0;
-  border-bottom-width: 0;
-  border-left-width: 0;
   border-radius: 40px 40px 0 0;
   padding: 0 13px 40px 13px;
   margin: 0 0 -75px 0;
@@ -275,10 +248,8 @@ h1, h2, h3, p {
 
 .menu__title {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 263px 25px;
   grid-gap: 20px;
-  position: relative;
-  margin: 0 auto 0 auto;
   justify-content: center;
   padding: 32px 17px 40px 17px;
 }
@@ -291,10 +262,7 @@ h1, h2, h3, p {
 .menu__subtitle {
   height: 40px;
   width: 40px;
-  border-top-width: 0;
-  border-right-width: 0;
-  border-bottom-width: 3px;
-  border-left-width: 0;
+  border-width: 0 0 3px 0;
   border-style: solid;
   border-color: #99E2D0;
   margin: 0 0 12px 0;
@@ -310,33 +278,25 @@ h1, h2, h3, p {
   display: grid;
   grid-template-rows: 1fr 80%;
   grid-gap: 5px;
-  border-top-width: 0;
-  border-right-width: 0;
-  border-bottom-width: 0;
-  border-left-width: 0;
   border-radius: 15px;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
   padding: 15px;
   position: relative;
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
   background-color: white;
   overflow: hidden;
 }
 
 .menu__cards__container:hover .menu__text {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   animation-name: menu__text;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
 }
 .menu__cards__container:hover .menu__selected {
   animation-name: menu__selected;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
 }
 .menu__cards__container:hover .menu__price {
-  position: relative;
   animation-name: menu__price;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
 }
 @keyframes menu__text {
   0% {
@@ -377,7 +337,6 @@ h1, h2, h3, p {
 }
 
 .menu__text {
-  position: relative;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -390,6 +349,7 @@ h1, h2, h3, p {
 
 .menu__price {
   display: grid;
+  position: relative;
   justify-content: end;
   grid-column-end: 3;
 }
@@ -397,19 +357,14 @@ h1, h2, h3, p {
 .menu__button {
   height: 50px;
   width: 186px;
-  border-top-width: 0;
-  border-right-width: 0;
-  border-bottom-width: 0;
-  border-left-width: 0;
+  border-style: none;
   border-radius: 25px;
-  background: linear-gradient(175deg, #9356DC, #FF79DA);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  background-image: linear-gradient(175deg, #9356DC, #FF79DA);
   margin: 0 auto 0 auto;
 }
 
-/* Responsive Tablet */
-/* Responsive Menu */
-/* Responsive Section Principale */
+/*** Section Menu ***/
 @media (max-width: 370px) {
   .menu__title {
     display: grid;
@@ -417,46 +372,44 @@ h1, h2, h3, p {
     grid-gap: 0;
   }
 }
+/***** Responsive  *****/
 @media (min-width: 768px) {
+  /*** Section Menu ***/
   .section__menu {
-    max-width: 1024px;
-    margin: 40px auto 40px auto;
+    max-width: 768px;
+    margin: 0 auto -75px auto;
   }
   .menu__container {
-    max-width: 768px;
     margin: 0 auto 0 auto;
   }
-}
-@media (min-width: 768px) {
+  /*** Section Footer ***/
   .footer {
     display: grid;
     grid-gap: 16px;
     padding: 30px 25px 30px 25px;
   }
-  .footer__grid {
+  .footer__container {
     display: grid;
     grid-template-columns: 191px 191px 130px 130px;
     grid-gap: 7px;
     align-items: end;
   }
-  .footer__grid__text {
+  .footer__text {
     display: grid;
     grid-template-columns: 13px 178px;
     grid-gap: 11px;
     align-items: center;
   }
 }
-/* Responsive Desktop */
-/* Responsive Page d'Acceuil*/
-/* Responsive Header */
+/***** Responsive Desktop *****/
 @media (min-width: 1024px) {
+  /**** Responsive Page d'Acceuil ****/
+  /*** Header ***/
   .header__homepage {
     display: grid;
     grid-template-rows: 96px;
   }
-}
-/* Responsive Section Exploration */
-@media (min-width: 1024px) {
+  /*** Section Exploration ***/
   .section__exploration {
     display: grid;
     grid-gap: 18px;
@@ -466,11 +419,8 @@ h1, h2, h3, p {
     display: grid;
     grid-gap: 18px;
   }
-}
-/* Responsive Section Fonctionnement */
-@media (min-width: 1024px) {
+  /*** Section Fonctionnement ***/
   .section__fonctionnement {
-    max-width: 1024px;
     margin: 50px auto 50px auto;
     padding: 0 20px 0 20px;
   }
@@ -479,11 +429,8 @@ h1, h2, h3, p {
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 25px;
   }
-}
-/* Responsive Section Restaurants */
-@media (min-width: 1024px) {
+  /*** Section Restaurants ***/
   .section__restaurants {
-    max-width: 1024px;
     display: grid;
     grid-gap: 18px;
     padding: 30px 20px 30px 20px;
@@ -494,16 +441,15 @@ h1, h2, h3, p {
     grid-template-columns: 1fr 1fr;
     grid-gap: 50px 100px;
   }
-}
-@media (min-width: 1024px) {
-  .footer__img {
+  /*** Section Footer ***/
+  .footer__logo {
     display: grid;
     grid-row-start: 1;
     grid-column-end: 3;
     align-items: end;
     justify-content: start;
   }
-  .footer__grid {
+  .footer__container {
     display: grid;
     grid-template-rows: 54px;
     grid-template-columns: 191px 191px 130px 130px;
