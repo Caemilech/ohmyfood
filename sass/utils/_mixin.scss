@@ -123,12 +123,13 @@
     justify-content: $justify-content;
 }
 
-@mixin position($position: null, $top: null, $right: null, $bottom: null, $left: null){
+@mixin position($position: null, $top: null, $right: null, $bottom: null, $left: null, $z-index: null){
     position: $position;
     top: $top;
     right: $right;
     bottom: $bottom;
     left: $left;
+    z-index: $z-index;
 }
 
 // Animation Menu //

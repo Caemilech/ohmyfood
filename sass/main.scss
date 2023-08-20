@@ -36,7 +36,7 @@ h1, h2, h3, p{
 
 .fa-heart__restaurants:hover, .fa-heart__menu:hover{
     @include opacity(1);       
-    @include font($font-weight: 900);
+    @include font($font-weight: 1000);
     @include background($background-image: linear-gradient(175deg, #9356DC, #FF79DA), $background-clip: text);
     transition: all ease-in-out;
     -webkit-text-fill-color: transparent;
@@ -49,6 +49,74 @@ h1, h2, h3, p{
 }
 
 /******* Page d'acceuil *******/
+
+/*** Loader ***/
+
+.loader__container{
+    @include position($position: fixed, $top: 0, $left: 0, $bottom: 0, $right: 0, $z-index: 1);          
+    @include background($background-color: rgba(255, 255, 255, 0.5));      
+    animation-name: loader;
+    animation-duration: 0.1s;
+    animation-delay: 5s;
+    animation-fill-mode: forwards;       
+}
+
+.loader__text__hidden, .loader__text__visible{
+    @include font($font-size: 100px, $font-weight: 900);
+}
+
+@media (max-width: 768px) {
+
+    .loader__text__hidden, .loader__text__visible{
+        @include font($font-size: 50px, $font-weight: 900);
+    }    
+}
+
+.loader{
+    @include grid1;
+    @include height($height: 100%);
+    @include position_horizontal($align-items: center);
+    @include position_vertical($justify-content: center);
+}
+
+.loader__text__hidden{
+    @include grid1;
+    @include grid__position($grid-row-start: 1, $grid-column-end: 2);          
+    @include background($background-clip: text);
+    @include color($color: rgba(0, 0, 0, 0.5)); 
+}
+
+.loader__text__visible{
+    @include grid1;
+    @include grid__position($grid-row-start: 1, $grid-column-end: 2);                 
+    @include background($background-image: linear-gradient(175deg, #9356DC, #FF79DA), $background-clip: text);
+    @include color(transparent); 
+    @include opacity(1);
+    animation-name: loader_text_visible;
+    animation-duration: 5s;
+    animation-timing-function: linear;     
+}
+
+@keyframes loader{
+    to{
+        visibility: hidden;
+    }    
+}
+
+@keyframes loader_text_visible{
+    0%{
+        width: 0;
+        grid-row-start: 1;
+        grid-column-end: 2;          
+    }
+        
+    100%{
+        width: 100%;
+        grid-row-start: 1;
+        grid-column-end: 2; 
+    }
+    
+}
 
 /*** Header ***/
 

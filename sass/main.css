@@ -23,7 +23,7 @@ h1, h2, h3, p {
 
 .fa-heart__restaurants:hover, .fa-heart__menu:hover {
   opacity: 1;
-  font-weight: 900;
+  font-weight: 1000;
   background-image: linear-gradient(175deg, #9356DC, #FF79DA);
   -webkit-background-clip: text;
           background-clip: text;
@@ -38,6 +38,79 @@ h1, h2, h3, p {
 }
 
 /******* Page d'acceuil *******/
+/*** Loader ***/
+.loader__container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.5);
+  animation-name: loader;
+  animation-duration: 0.1s;
+  animation-delay: 5s;
+  animation-fill-mode: forwards;
+}
+
+.loader__text__hidden, .loader__text__visible {
+  font-size: 100px;
+  font-weight: 900;
+}
+
+@media (max-width: 768px) {
+  .loader__text__hidden, .loader__text__visible {
+    font-size: 50px;
+    font-weight: 900;
+  }
+}
+.loader {
+  display: grid;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader__text__hidden {
+  display: grid;
+  grid-row-start: 1;
+  grid-column-end: 2;
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.loader__text__visible {
+  display: grid;
+  grid-row-start: 1;
+  grid-column-end: 2;
+  background-image: linear-gradient(175deg, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  opacity: 1;
+  animation-name: loader_text_visible;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+}
+
+@keyframes loader {
+  to {
+    visibility: hidden;
+  }
+}
+@keyframes loader_text_visible {
+  0% {
+    width: 0;
+    grid-row-start: 1;
+    grid-column-end: 2;
+  }
+  100% {
+    width: 100%;
+    grid-row-start: 1;
+    grid-column-end: 2;
+  }
+}
 /*** Header ***/
 .header__homepage {
   display: grid;
