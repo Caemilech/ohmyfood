@@ -1,15 +1,28 @@
-@mixin heart{
-    position: $position-absolute;
-    right: 24px;
+@use '../abstracts' as *;
+
+/***** Coeur Homepage *****/
+
+.fa-heart__restaurants{
+    @include position($position:absolute,$right:24px); 
+    @include font($font-size: 25px);
 }
 
-@mixin heart__homepage{   
-    padding-top: 23px;
+/***** Coeur Menu *****/
+
+.fa-heart__menu{
+    @include grid1;
+    @include margin(0 auto 0 auto);
+    @include font($font-size: 25px);
 }
 
-@mixin heart__full{  
-    opacity: 0;
+/***** Animation Coeur *****/ 
 
-    color: blue;
+.fa-heart__restaurants:hover, .fa-heart__menu:hover{
+    @include opacity(1);       
+    @include font($font-weight: 1000);
+    @include background($background-image: linear-gradient(175deg, #9356DC, #FF79DA), $background-clip: text);
+    transition: all ease-in-out;
+    -webkit-text-fill-color: transparent;
 }
+
 

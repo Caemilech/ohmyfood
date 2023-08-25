@@ -1,39 +1,30 @@
-@mixin header{
-    grid-template-rows: 63px;
+@use '../abstracts' as *;
 
-    box-shadow: $box-shadow1;  
-    
+/***** Header Homepage *****/
 
-
+.header__homepage{
+    @include grid1($grid-template-rows: 63px);
+    @include border($box-shadow: $box-shadow1);
+    @include position($position: relative);
+    @include position_horizontal($align-items: center);
 }
 
-@mixin homepage__header{
-    grid-template-columns: 1fr ;
+.header__homepage__logo{
+    @include margin(0 auto 0 auto);
 }
 
-@mixin logo__header{
-    margin: $margin-auto;   
+/***** Header Menu *****/
+
+.header__menu{
+    @include grid1($grid-template-rows: 63px, $grid-template-columns: 89px 1fr 89px);
+    @include position_horizontal($align-items: center);
+    @include border($box-shadow: $box-shadow1);
 }
 
-@mixin logo__header__menu{
-    margin: $margin-auto;   
-    
-    padding-right: 34px;
+.header__arrow{
+    @include padding($padding-left: 0 0 0 17px);
 }
 
-@mixin menu__header{
-    grid-template-columns: 89px 1fr;    
+.header__menu__logo{
+    @include margin(0 auto 0 auto);
 }
-
-@mixin img__header{
-    padding-left: 17px;
-
-    @include grid1($grid: grid, $grid-template-rows: 1px, $grid-template-columns: 1px, $grid-gap: 1px);
-
-    @include position($position:absolute);
-}
-
-
-
-
-

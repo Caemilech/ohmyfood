@@ -1,11 +1,22 @@
-@mixin button{     
-    border-radius: 25px;
+@use '../abstracts' as *;
 
-    border: $border-none;
+.exploration__button {
+    @include grid1;
+    @include height($height: 50px);
+    @include width($width: 218px);
+    @include border($border-style: none, $border-radius: 25px, $box-shadow: $box-shadow_button);
+    @include background($background-image: linear-gradient(175deg, #9356DC, #FF79DA));    
+    @include margin(0 auto 0 auto);
+    @include position_horizontal($align-items: center);
+}
 
-    background: linear-gradient(175deg, $color1 , $color2);
-
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-
-    justify-content: $justify-center;
+.menu__button {
+    @include grid1;
+    @include height($height: 50px);
+    @include width($width: 186px);
+    @include border($border-style: none, $border-radius: 25px, $box-shadow: $box-shadow_button);
+    @include background($background-image: linear-gradient(175deg, #9356DC, #FF79DA));   
+    @include position_horizontal($align-items: center); 
+    @include position_vertical($justify-content: center);
+    @include margin(0 auto 0 auto)
 }

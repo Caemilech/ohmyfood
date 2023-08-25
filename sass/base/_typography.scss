@@ -1,8 +1,5 @@
-@mixin typography{
-    font-family: "Roboto", sans-serif;
-}
+@use '../abstracts' as *;
 
-@mixin links{
-    color: $background-color-first;
-    text-decoration: none;
+body{
+    @include font($font-family: ("Roboto", sans-serif));
 }

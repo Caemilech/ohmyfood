@@ -1,6 +1,6 @@
-// Mixin Général //
+// Mixin Général
 
-// Height //
+// Height
 
 @mixin height($height: null, $min-height: null, $max-height: null){
     height: $height;
@@ -8,7 +8,7 @@
     max-height: $max-height;
 }
 
-// Width // 
+// Width
 
 @mixin width($width: null, $min-width: null, $max-width: null){
     width: $width;
@@ -16,19 +16,19 @@
     max-width: $max-width;
 }
 
-// Margin //
+// Margin
 
 @mixin margin($margin-top: null, $margin-left: null, $margin-bottom: null, $margin-right: null){    
     margin: $margin-top $margin-left $margin-bottom $margin-right;    
 }
 
-// Padding //
+// Padding
 
 @mixin padding($padding-top: null, $padding-left: null, $padding-bottom: null, $padding-right: null){
     padding: $padding-top $padding-left $padding-bottom $padding-right;    
 }
 
-// Border //
+// Border
 
 @mixin border($border-width: null, $border-style: null, $border-color: null, $border-radius: null, $box-shadow: null){
     border-width: $border-width;    
@@ -38,13 +38,13 @@
     box-shadow: $box-shadow;
 }
 
-// Color //
+// Color
 
 @mixin color($color: null){
     color: $color;
 }
 
-// Background //
+// Background
 
 @mixin background($background-image: null, $background-color: null, $background-clip: null){
     background-image: $background-image;
@@ -52,7 +52,7 @@
     background-clip: $background-clip;
 }
 
-// Font //
+// Font
 
 @mixin font($font-family: null, $font-size: null, $font-weight: null){
     font-family: $font-family;
@@ -60,31 +60,30 @@
     font-weight: $font-weight;
 }
 
-// Opacity //
+// Opacity
 
 @mixin opacity($opacity: null){
     opacity: $opacity;
 }
 
-// Links //
+// Links
 
 @mixin links ($color_links: null, $text-decoration: none){
     color: $color_links;
     text-decoration: $text-decoration;
 }
 
-// Image //
+// Image
 
 @mixin img($object-fit: null, $object-position: null){
     object-fit: $object-fit;
     object-position: $object-position;
 }
 
-//Text//
+//Text
 
 @mixin text($text-align: null){
     text-align: $text-align;
-
 }
 
 @mixin text_management($overflow: null, $text-overflow: null, $white-space: null){
@@ -93,7 +92,7 @@
     white-space: $white-space;
 }
 
-// Mixin Grid //
+// Mixin Grid
 
 @mixin grid1($grid: grid, $grid-template-rows: null, $grid-template-columns: null, $grid-gap: null){
     display: $grid;
@@ -109,7 +108,7 @@
     grid-column-end: $grid-column-end;
 }
 
-// Mixin Position //
+// Mixin Position
 
 @mixin position_horizontal($align-items: null, $align-self: null, $align-content: null){
     align-items: $align-items;
@@ -132,7 +131,7 @@
     z-index: $z-index;
 }
 
-// Animation Menu //
+/***** Animation Menu *****/
 
 @mixin animation_menu ($animation_menu: true){
     @if $animation_menu{
@@ -149,7 +148,7 @@
 
         .menu__price{         
             animation-name: menu__price;
-            animation-duration: 0.5s;                  
+            animation-duration: 0.5s;                         
         }
     }
 

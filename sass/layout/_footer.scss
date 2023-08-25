@@ -1,15 +1,14 @@
-@mixin footer{
-    grid-gap: 22px;
+@use '../abstracts' as *;
 
-    padding: 22px 25px 22px 25px;
-    
-    background-color: $background-color-footer;
+/***** Footer *****/
+
+.footer{
+    @include grid1($grid-gap: 22px);
+    @include padding(22px 25px 22px 25px);
+    @include background($background-color: $background-color-footer);
 }
-
-@mixin grid__footer{
-    grid-template-rows: 19px;
-
-    grid-gap: 7px;
-
-    color: $background-color-first;
+    
+.footer__container{
+    @include grid1($grid-template-rows: 19px, $grid-gap: 7px); 
+    @include color($background-color-first);
 }

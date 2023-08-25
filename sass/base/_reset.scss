@@ -1,4 +1,13 @@
-@mixin margin{
-    margin: 0;
+@use '../abstracts' as *;
+
+body{
+    @include margin(0 0 0 0);
 }
 
+a{
+    @include links($color_links: $background-color-first);  
+}
+
+h1, h2, h3, p{
+    @include margin(0 0 0 0);
+}
