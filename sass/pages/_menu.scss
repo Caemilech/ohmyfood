@@ -3,7 +3,7 @@
 /***** Main *****/
 
 .restaurant__img{
-    @include size(275px, 100%);    
+    @include size(100%, 275px);    
     object-fit: cover;
     object-position: center;
 }

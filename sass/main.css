@@ -250,8 +250,8 @@
 
 /***** Main *****/
 .restaurant__img {
-  width: 275px;
-  height: 100%;
+  width: 100%;
+  height: 275px;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
