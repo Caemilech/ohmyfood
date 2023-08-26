@@ -3,75 +3,86 @@
 /***** Main *****/
 
 .restaurant__img{
-    @include height($height: 275px);
-    @include width($width: 100%);
-    @include img($object-fit: cover, $object-position: center);
+    @include size(275px, 100%);    
+    object-fit: cover;
+    object-position: center;
 }
 
 /***** Section Menu *****/
 
-.section__menu {
-    @include position($position: relative, $bottom: 75px);
-    @include border ($border-radius: 40px 40px 0 0);
-    @include padding(0 13px 40px 13px);
-    @include margin(0 auto -75px auto);
-    @include width($max-width: 768px);
-    @include background($background-color: $background-color-secondary);
+.section__menu{
+    position: relative;
+    bottom: 75px;
+    max-width: 768px;
+    padding: 0 13px 40px 13px;
+    margin: 0 auto -75px auto;
+    border-radius: 40px 40px 0 0;
+    background-color: $background-color-secondary;
 }
 
-.menu__title {
-    @include grid1($grid-template-columns: 263px 25px, $grid-gap: 20px);   
-    @include position_vertical($justify-content: center);
-    @include padding(32px 17px 40px 17px);
+.menu__title{
+    grid-template-columns: 1fr;
+    grid-gap: 0;
 }
 
-.menu__container {
-    @include grid1($grid-gap: 40px);
+.menu__container{
+    display: grid;
+    grid-gap: 40px;
 }
 
-.menu__subtitle {
-    @include height($height: 40px);
-    @include width($width: 40px);
-    @include border($border-width: 0 0 3px 0 , $border-style: solid, $border-color: $color-menu-title);
-    @include margin (0 0 12px 0);  
+.menu__subtitle{
+    @include size(40px, 40px);
+    border-width: 0 0 3px 0;
+    border-style: solid;
+    border-color: $color-menu-title;
+    margin-bottom: 12px;  
 }
 
-.menu__cards {
-    @include grid1($grid-template-columns: 100%, $grid-gap: 40px);
+.menu__cards{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 40px;
 }
 
-.menu__cards__container {
-    @include grid1($grid-template-rows: 1fr 80%, $grid-gap: 5px);
-    @include border($border-radius: 15px, $box-shadow: $box-shadow2);
-    @include padding(15px);
-    @include position($position: relative);
-    @include background($background-color: $background-color-first);
-    @include text_management($overflow: hidden);
+.menu__cards__container{
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr 80%;
+    grid-gap: 5px;
+    border-radius: 15px; 
+    box-shadow: $box-shadow2;
+    padding: 15px;    
+    background-color: $background-color-first;
+    overflow: hidden;
 }
 
-.menu__selected {
-    @include position($position: absolute, $right: 0);
-    @include height($height: 77px);
-    @include opacity(0)
+.menu__selected{
+    position: absolute;
+    right: 0;
+    @include size($height: 77px);
+    opacity: 0;
 }
 
-.menu__text__title {
-    @include grid1;
+.menu__text__title{
+    display: grid;
 }
 
-.menu__text {
-    @include text_management($overflow: hidden, $text-overflow: ellipsis, $white-space: nowrap);
+.menu__text{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-.menu__texts {
-    @include grid1($grid-template-columns: 80% 1fr);
+.menu__texts{
+    display: grid;
+    grid-template-columns: 80% 1fr;
 }
 
-.menu__price {
-    @include grid1;
-    @include position($position: relative);
-    @include position_vertical($justify-content: end);
-    @include grid__position($grid-column-end: 3);
+.menu__price{
+    display: grid;
+    position: relative;
+    justify-content: end;
+    $grid-column-end: 3;
 }
 
 // Hover

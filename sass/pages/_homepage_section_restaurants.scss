@@ -2,43 +2,50 @@
 
 /***** Section Restaurants *****/
 
-.section__restaurants {
-    @include grid1($grid-gap: 20px);
-    @include padding(54px 18px 66px 18px);
-    @include background($background-color: $background-color-secondary);
+.section__restaurants{
+    display: grid;
+    grid-gap: 20px;
+    padding: 54px 18px 66px 18px;
+    background-color: $background-color-secondary;
 }
 
-.restaurants__container {
-    @include grid1($grid-gap: 18px);
+.restaurants__container{
+    display: grid;
+    grid-gap: 18px;
 }
 
-.restaurants__links__menu {
-    @include links($color_links: black);
+.restaurants__links__menu{
+    color: black;
 }
 
-.restaurants__cards {
-    @include grid1;
-    @include position($position: relative);
-    @include border($border-radius: 15px, $box-shadow: $box-shadow2);
-    @include background($background-color: $background-color-first);
+.restaurants__cards{
+    display: grid;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: $box-shadow2;
+    background-color: $background-color-first;
 }
 
-.restaurants__new__menu {
-    @include position($position: absolute, $top: 15px, $right: 15px);
-    @include padding(7px 10px 6px 9px);
-    @include border($border-radius: 2px, $box-shadow: $box-shadow1);
-    @include background($background-color: $color-menu-title);
-    @include color($color-restaurants_grid_new);
+.restaurants__new__menu{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 7px 10px 6px 9px;
+    border-radius: 2px; 
+    box-shadow: $box-shadow1;
+    background-color: $color-menu-title;
+    color: $color-restaurants_grid_new;
 }
 
-.restaurants__img {
-    @include height($height: 175px);
-    @include width($width: 100%);
-    @include img($object-fit: cover, $object-position: center);
-    @include border($border-radius: 15px 15px 0 0)
+.restaurants__img{
+    @include size(100%, 175px);
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px 15px 0 0;
 }
 
-.restaurants__text {
-    @include grid1($grid-gap: 5px);
-    @include margin(10px 60px 12px 13px);
+.restaurants__text{
+    display: grid;
+    grid-gap: 5px;
+    margin: 10px 60px 12px 13px;
 }

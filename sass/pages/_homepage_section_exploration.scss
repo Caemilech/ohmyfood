@@ -2,21 +2,23 @@
 
 /***** Section Exploration *****/
 
-.section__exploration {
-    @include grid1($grid-gap: 27px);
-    @include padding(39px 20px 57px 20px);
-    @include position_horizontal($align-items: center);
-    @include text($text-align: center);
-    @include background($background-color: $background-color-secondary);
+.section__exploration{
+    display: grid;
+    grid-gap: 27px;
+    padding: 39px 20px 57px 20px;
+    align-items: center;
+    background-color: $background-color-secondary;
 }
 
-.exploration__text {
-    @include grid1($grid-gap: 5px)
+.exploration__text{
+    display: grid;
+    grid-gap: 5px;
+    text-align: center;
 }
 
 // Hover
 
 .exploration__button:hover, .menu__button:hover{
-    @include opacity (0.8);
-    @include color($background-color-first);
+    opacity: 0.8;
+    color: $background-color-first;
 }

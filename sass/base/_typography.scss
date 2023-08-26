@@ -1,5 +1,5 @@
 @use '../abstracts' as *;
 
 body{
-    @include font($font-family: ("Roboto", sans-serif));
+    font-family: "Roboto", sans-serif;
 }

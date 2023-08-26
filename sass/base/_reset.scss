@@ -1,13 +1,10 @@
 @use '../abstracts' as *;
 
-body{
-    @include margin(0 0 0 0);
+body, h1, h2, h3, p{
+    margin: 0;
 }
 
 a{
-    @include links($color_links: $background-color-first);  
-}
-
-h1, h2, h3, p{
-    @include margin(0 0 0 0);
+    color: $background-color-first;
+    text-decoration: none;
 }

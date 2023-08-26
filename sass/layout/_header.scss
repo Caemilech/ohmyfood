@@ -3,28 +3,31 @@
 /***** Header Homepage *****/
 
 .header__homepage{
-    @include grid1($grid-template-rows: 63px);
-    @include border($box-shadow: $box-shadow1);
-    @include position($position: relative);
-    @include position_horizontal($align-items: center);
+    display: grid;
+    grid-template-rows: 63px;
+    box-shadow: $box-shadow1;
+    position: relative;
+    align-items: center;
 }
 
 .header__homepage__logo{
-    @include margin(0 auto 0 auto);
+    margin: 0 auto;
 }
 
 /***** Header Menu *****/
 
 .header__menu{
-    @include grid1($grid-template-rows: 63px, $grid-template-columns: 89px 1fr 89px);
-    @include position_horizontal($align-items: center);
-    @include border($box-shadow: $box-shadow1);
+    display: grid;
+    grid-template-rows: 63px;
+    grid-template-columns: 89px 1fr 89px;
+    align-items: center;
+    box-shadow: $box-shadow1;
 }
 
 .header__arrow{
-    @include padding($padding-left: 0 0 0 17px);
+    padding-left: 17px;
 }
 
 .header__menu__logo{
-    @include margin(0 auto 0 auto);
+    margin: 0 auto;
 }

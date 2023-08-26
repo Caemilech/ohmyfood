@@ -3,18 +3,21 @@
 /***** Section Location *****/
 
 .section__location{
-    @include grid1($grid-template-rows: 50px, $grid-template-columns: 16px 109px, $grid-gap: 17px);
-    @include position_vertical($justify-content: center);
-    @include position_horizontal($align-items: center);
-    @include background($background-color: $background-color-location);
+    display: grid;
+    grid-template-rows: 50px;
+    grid-template-columns: 16px 109px; 
+    grid-gap: 17px;
+    justify-content: center;
+    align-items: center;
+    background-color: $background-color-location;
 }
     
 .location__search input[type=text]{
-    @include height($height: 19px);
-    @include border($border-style: none);
-    @include background($background-color: $background-color-location)
+    @include size($height: 19px);
+    border-style: none;
+    background-color: $background-color-location;
 }    
 
 .fa-location-dot{
-    @include color($background-color-footer)    
+    color: $background-color-footer;    
 }

@@ -3,34 +3,33 @@
 /***** Loader *****/
 
 .loader__container{
-    @include position($position: fixed, $top: 0, $left: 0, $bottom: 0, $right: 0, $z-index: 1);          
-    @include background($background-color: rgba(255, 255, 255));     
+    position: fixed;
+    inset: 0;
+    z-index: 1;             
+    background-color: $background-color-first;     
 }
 
 .loader__text__hidden, .loader__text__visible{
-    @include font($font-size: 100px, $font-weight: 900);
+    font-size: 50px; 
+    font-weight: 900;   
 }
 
 .loader{
-    @include grid1;
-    @include height($height: 100%);
-    @include position_horizontal($align-items: center);
-    @include position_vertical($justify-content: center);
+    display: grid;
+    @include size($height: 100%);
+    align-items: center;
+    justify-content: center;
 }
 
 .loader__text__hidden{
-    @include grid1;
-    @include grid__position($grid-row-start: 1, $grid-column-end: 2);          
-    @include background($background-clip: text);
-    @include color($color: rgba(0, 0, 0, 0.5)); 
+    @include loader_text;
+    color: rgba(0, 0, 0, 0.5);        
 }
 
 .loader__text__visible{
-    @include grid1;
-    @include grid__position($grid-row-start: 1, $grid-column-end: 2);                 
-    @include background($background-image: linear-gradient(175deg, #9356DC, #FF79DA), $background-clip: text);
-    @include color(transparent); 
-    @include opacity(1); 
+    @include loader_text;               
+    background-image: linear-gradient(175deg, #9356DC, #FF79DA);
+    color: transparent; 
 }
 
 /***** Animation Loader *****/
@@ -59,6 +58,7 @@
 }
 
 @keyframes loader_text_visible{
+
     0%{
         width: 0;
         grid-row-start: 1;

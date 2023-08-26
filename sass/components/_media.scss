@@ -1,49 +1,53 @@
-@use '../abstracts' as *;
+@use '../pages' as *;
+@use '../layout' as *;
 
 /***** Responsive Elements *****/
 
-/*** Loader ***/
-
-@media (max-width: 768px) {
+@media (min-width: 768px){
 
     .loader__text__hidden, .loader__text__visible{
-        @include font($font-size: 50px, $font-weight: 900);
-    }    
+        font-size: 100px; 
+    }   
 }
 
 /*** Section Menu ***/
 
-@media (max-width: 370px){
+@media (min-width: 370px){
     .menu__title{
-        @include grid1($grid-template-columns: 1fr, $grid-gap: 0);
+        display: grid;
+        grid-template-columns: 263px 25px;
+        grid-gap: 20px;   
+        justify-content: center;
+        padding: 32px 17px 40px 17px;
     }  
 } 
 
 /***** Responsive Tablet *****/
 
-@media (min-width: 768px) {
+@media (min-width: 768px){
 
     /*** Section Menu ***/
 
     .menu__container{
-        @include margin(0 auto 0 auto);
+        margin: 0 auto;
     }
     
     /*** Section Footer ***/
 
     .footer{
-        @include grid1($grid-gap: 16px);
-        @include padding(30px 25px 30px 25px);
+        grid-gap: 16px;
+        padding: 30px 25px;
     }     
 
     .footer__container{
-        @include grid1($grid-template-columns: 191px 191px 130px 130px, $grid-gap: 7px); 
-        @include position_horizontal($align-items: end);
+        grid-template-columns: 191px 191px 130px 130px;
+        align-items: end;
     }    
 
     .footer__text{
-        @include grid1($grid-template-columns: 13px 178px, $grid-gap: 11px);
-        @include position_horizontal($align-items: center);              
+        grid-template-columns: 13px 178px; 
+        grid-gap: 11px;
+        align-items: center;              
     }
 }
 
@@ -56,54 +60,59 @@
     /*** Header ***/
 
     .header__homepage{
-        @include grid1($grid-template-rows: 96px);
+        grid-template-rows: 96px;
     }        
 
     /*** Section Exploration ***/
     
     .section__exploration{
-        @include grid1($grid-gap: 18px);
-        @include padding(30px 0 30px 0px);
+        grid-gap: 18px;
+        padding: 30px 0;
     }
     
     .exploration__text{
-        @include grid1($grid-gap: 18px);
+        grid-gap: 18px;
     }   
             
     /*** Section Fonctionnement ***/
      
     .section__fonctionnement{
-        @include margin(50px auto 50px auto);
-        @include padding(0 20px 0 20px);
+        margin: 50px auto;
+        padding: 0 20px;
     }
     
     .fonctionnement__container{
-        @include grid1($grid-template-columns: 1fr 1fr 1fr, $grid-gap: 25px);
+        grid-template-columns: 1fr 1fr 1fr; 
+        grid-gap: 25px;
     }
     
     /*** Section Restaurants ***/ 
 
     .section__restaurants{        
-        @include grid1($grid-gap: 18px);
-        @include padding(30px 20px 30px 20px);
-        @include margin (0 auto 0 auto);
+        grid-gap: 18px;
+        padding: 30px 20px;
+        margin: 0 auto;
     }
     
     .restaurants__container{
-        @include grid1($grid-template-columns: 1fr 1fr, $grid-gap: 50px 100px);
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 50px 100px;
     }        
 
     /*** Section Footer ***/
    
-    .footer__logo {
-        @include grid1;
-        @include grid__position($grid-row-start: 1, $grid-column-end: 3);  
-        @include position_horizontal($align-items: end);
-        @include position_vertical($justify-content: start);
+    .footer__logo{
+        display: grid;
+        grid-row-start: 1;
+        grid-column-end: 3;  
+        align-items: end;
+        justify-content: start;
     }
     
     .footer__container{
-        @include grid1($grid-template-rows: 54px, $grid-template-columns: 191px 191px 130px 130px, $grid-gap: 7px); 
-        @include position_vertical($justify-content: end);
+        grid-template-rows: 54px;
+        grid-template-columns: 191px 191px 130px 130px;
+        grid-gap: 7px; 
+        justify-content: end;
     }
 }
