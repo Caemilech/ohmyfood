@@ -1,4 +1,5 @@
-@use '../abstracts' as *;
+@use '../abstracts/variables';
+@use '../abstracts/mixin';
 
 /***** Section Restaurants *****/
 
@@ -6,12 +7,21 @@
     display: grid;
     grid-gap: 20px;
     padding: 54px 18px 66px 18px;
-    background-color: $background-color-secondary;
+    background-color: variables.$background-color-secondary;
+    @include mixin.breakpoint(large){
+        grid-gap: 18px;
+        padding: 30px 20px;
+        margin: 0 auto;
+    }
 }
 
 .restaurants__container{
     display: grid;
     grid-gap: 18px;
+    @include mixin.breakpoint(large){
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 50px 100px;
+    }
 }
 
 .restaurants__links__menu{
@@ -22,8 +32,8 @@
     display: grid;
     position: relative;
     border-radius: 15px;
-    box-shadow: $box-shadow2;
-    background-color: $background-color-first;
+    box-shadow: variables.$box-shadow2;
+    background-color: variables.$background-color-first;
 }
 
 .restaurants__new__menu{
@@ -32,13 +42,14 @@
     right: 15px;
     padding: 7px 10px 6px 9px;
     border-radius: 2px; 
-    box-shadow: $box-shadow1;
-    background-color: $color-menu-title;
-    color: $color-restaurants_grid_new;
+    box-shadow: variables.$box-shadow1;
+    background-color: variables.$color-menu-title;
+    color: variables.$color-restaurants_grid_new;
 }
 
 .restaurants__img{
-    @include size(100%, 175px);
+    width: 100%; 
+    height: 175px;
     object-fit: cover;
     object-position: center;
     border-radius: 15px 15px 0 0;

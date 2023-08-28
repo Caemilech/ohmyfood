@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use '../abstracts/variables';
 
 /***** Section Location *****/
 
@@ -9,15 +9,15 @@
     grid-gap: 17px;
     justify-content: center;
     align-items: center;
-    background-color: $background-color-location;
+    background-color: variables.$background-color-location;
 }
     
 .location__search input[type=text]{
-    @include size($height: 19px);
+    height: 19px;
     border-style: none;
-    background-color: $background-color-location;
+    background-color: variables.$background-color-location;
 }    
 
 .fa-location-dot{
-    color: $background-color-footer;    
+    color: variables.$background-color-footer;    
 }

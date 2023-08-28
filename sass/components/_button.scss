@@ -1,11 +1,11 @@
-@use '../abstracts' as *;
+@use '../abstracts/mixin';
+
+/***** Bouton *****/
 
 .exploration__btn{
-    @include button;
-    @include size(218px, 50px);   
+    @include mixin.button(218px, 50px);
 }
 
 .menu__btn{
-    @include button;
-    @include size(186px, 50px);
+    @include mixin.button(186px, 50px);
 }

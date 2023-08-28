@@ -1,9 +1,11 @@
-@use '../abstracts' as *;
+@use '../abstracts/variables';
+@use '../abstracts/mixin';
 
-/***** Main *****/
+/***** Main Menu *****/
 
 .restaurant__img{
-    @include size(100%, 275px);    
+    width: 100%;
+    height: 275px;    
     object-fit: cover;
     object-position: center;
 }
@@ -17,24 +19,35 @@
     padding: 0 13px 40px 13px;
     margin: 0 auto -75px auto;
     border-radius: 40px 40px 0 0;
-    background-color: $background-color-secondary;
+    background-color: variables.$background-color-secondary;
 }
 
 .menu__title{
     grid-template-columns: 1fr;
     grid-gap: 0;
+    @media (min-width: 370px){
+        display: grid;
+        grid-template-columns: 263px 25px;
+        grid-gap: 20px;   
+        justify-content: center;
+        padding: 32px 17px 40px 17px;        
+    } 
 }
 
 .menu__container{
     display: grid;
     grid-gap: 40px;
+    @include mixin.breakpoint(medium){
+        margin: 0 auto;
+    }
 }
 
 .menu__subtitle{
-    @include size(40px, 40px);
+    width: 40px;
+    height: 40px;
     border-width: 0 0 3px 0;
     border-style: solid;
-    border-color: $color-menu-title;
+    border-color: variables.$color-menu-title;
     margin-bottom: 12px;  
 }
 
@@ -50,16 +63,16 @@
     grid-template-rows: 1fr 80%;
     grid-gap: 5px;
     border-radius: 15px; 
-    box-shadow: $box-shadow2;
+    box-shadow: variables.$box-shadow2;
     padding: 15px;    
-    background-color: $background-color-first;
+    background-color: variables.$background-color-first;
     overflow: hidden;
 }
 
 .menu__selected{
     position: absolute;
     right: 0;
-    @include size($height: 77px);
+    height: 77px;
     opacity: 0;
 }
 
@@ -82,11 +95,11 @@
     display: grid;
     position: relative;
     justify-content: end;
-    $grid-column-end: 3;
+    grid-column-end: 3;
 }
 
-// Hover
+/***** Animation Menu *****/
 
 .menu__cards__container:hover{
-    @include animation_menu($animation_menu: true);
+    @include mixin.animation_menu($animation_menu: true);
 }

@@ -1,4 +1,5 @@
-@use '../abstracts' as *;
+@use '../abstracts/variables';
+@use '../abstracts/mixin';
 
 /***** Footer *****/
 
@@ -6,12 +7,44 @@
     display: grid;
     grid-gap: 22px;
     padding: 22px 25px;
-    background-color: $background-color-footer;
+    background-color: variables.$background-color-footer;
+    @include mixin.breakpoint(medium){
+        grid-gap: 16px;
+        padding: 30px 25px;
+    }
+}
+
+.footer__logo{
+    @include mixin.breakpoint(large){
+        display: grid;
+        grid-row-start: 1;
+        grid-column-end: 3;  
+        align-items: end;
+        justify-content: start;
+    }
 }
     
 .footer__container{
     display: grid;
     grid-template-rows: 19px;
     grid-gap: 7px; 
-    color: $background-color-first;
+    color: variables.$background-color-first;
+    @include mixin.breakpoint(medium){
+        grid-template-columns: 191px 191px 130px 130px;
+        align-items: end;
+    }
+    @include mixin.breakpoint(large){
+        grid-template-rows: 54px;
+        grid-template-columns: 191px 191px 130px 130px;
+        grid-gap: 7px; 
+        justify-content: end;
+    }
+}
+
+.footer__text{
+    @include mixin.breakpoint(medium){
+        grid-template-columns: 13px 178px; 
+        grid-gap: 11px;
+        align-items: center;    
+    }
 }

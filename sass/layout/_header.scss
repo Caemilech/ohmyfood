@@ -1,33 +1,21 @@
-@use '../abstracts' as *;
+@use '../abstracts/mixin';
 
 /***** Header Homepage *****/
 
-.header__homepage{
-    display: grid;
-    grid-template-rows: 63px;
-    box-shadow: $box-shadow1;
-    position: relative;
-    align-items: center;
+.header{
+    @include mixin.header($grid-template-columns: 1fr)
 }
 
-.header__homepage__logo{
+.header__logo{
     margin: 0 auto;
 }
 
 /***** Header Menu *****/
 
 .header__menu{
-    display: grid;
-    grid-template-rows: 63px;
-    grid-template-columns: 89px 1fr 89px;
-    align-items: center;
-    box-shadow: $box-shadow1;
+    @include mixin.header($grid-template-columns: 0 1fr)
 }
 
 .header__arrow{
     padding-left: 17px;
-}
-
-.header__menu__logo{
-    margin: 0 auto;
 }

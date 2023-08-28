@@ -1,4 +1,5 @@
-@use '../abstracts' as *;
+@use '../abstracts/variables';
+@use '../abstracts/mixin';
 
 /***** Section Exploration *****/
 
@@ -7,18 +8,18 @@
     grid-gap: 27px;
     padding: 39px 20px 57px 20px;
     align-items: center;
-    background-color: $background-color-secondary;
+    background-color: variables.$background-color-secondary;
+    @include mixin.breakpoint(large){
+        grid-gap: 18px;
+        padding: 30px 0;
+    }
 }
 
 .exploration__text{
     display: grid;
     grid-gap: 5px;
     text-align: center;
-}
-
-// Hover
-
-.exploration__button:hover, .menu__button:hover{
-    opacity: 0.8;
-    color: $background-color-first;
+    @include mixin.breakpoint(large){
+        grid-gap: 18px;
+    }
 }
