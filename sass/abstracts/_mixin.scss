@@ -71,7 +71,7 @@
     font-weight: 1000;
     background-image: variables.$background-gradient;
     background-clip: text;
-    transition: all 250ms ease-in-out;
+    transition: all 1s ease-in-out;
     -webkit-text-fill-color: transparent;
 }
 
@@ -81,15 +81,18 @@
     @if $animation_menu{
         .menu__text{                      
             animation-name: menu__text;
-            animation-duration: 0.5s; 
+            animation-duration: 1s; 
+            animation-fill-mode: forwards;     
         }
         .menu__selected{
             animation-name: menu__selected;
-            animation-duration: 0.5s;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;     
         }  
         .menu__price{         
             animation-name: menu__price;
-            animation-duration: 0.5s;                         
+            animation-duration: 1s; 
+            animation-fill-mode: forwards;                           
         }
     }
 
