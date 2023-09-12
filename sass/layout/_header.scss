@@ -1,9 +1,7 @@
-@use '../abstracts/mixin';
-
 /***** Header Homepage *****/
 
 .header{
-    @include mixin.header($grid-template-columns: 1fr)
+    @include header($grid-template-columns: 1fr)
 }
 
 .header__logo{
@@ -13,7 +11,7 @@
 /***** Header Menu *****/
 
 .header__menu{
-    @include mixin.header($grid-template-columns: 0 1fr)
+    @include header($grid-template-columns: 0 1fr)
 }
 
 .header__arrow{

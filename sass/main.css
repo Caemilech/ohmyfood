@@ -1,3 +1,16 @@
+body, h1, h2, h3, p {
+  margin: 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
 /***** Bouton *****/
 .exploration__btn {
   display: grid;
@@ -32,27 +45,56 @@
 }
 
 /***** Coeur Homepage *****/
-.fa-heart__restaurants {
+.fa-heart__1 {
   position: absolute;
   right: 24px;
   font-size: 25px;
 }
 
+.fa-heart__restaurants {
+  position: absolute;
+  right: 24px;
+  font-size: 25px;
+  background-image: linear-gradient(175deg, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  transition: all 0.25s ease-in-out;
+  opacity: 0;
+}
+
+.fa-heart__restaurants:hover {
+  opacity: 1;
+}
+
 /***** Coeur Menu *****/
-.fa-heart__menu {
+.fa-heart__2 {
   display: grid;
+  grid-row-start: 1;
+  grid-column-end: 3;
   margin: 0 auto;
   font-size: 25px;
 }
 
-/***** Animation Heart *****/
-.fa-heart__restaurants:hover, .fa-heart__menu:hover {
-  font-weight: 1000;
+.fa-heart__menu {
+  display: grid;
+  grid-row-start: 1;
+  grid-column-end: 3;
+  right: 24px;
+  margin: 0 auto;
+  font-size: 25px;
   background-image: linear-gradient(175deg, #9356DC, #FF79DA);
   -webkit-background-clip: text;
           background-clip: text;
-  transition: all 1s ease-in-out;
   -webkit-text-fill-color: transparent;
+  color: transparent;
+  transition: all 0.25s ease-in-out;
+  opacity: 0;
+}
+
+.fa-heart__menu:hover {
+  opacity: 1;
 }
 
 /***** Loader *****/
@@ -63,7 +105,7 @@
   background-color: white;
   animation-name: loader;
   animation-duration: 0.1s;
-  animation-delay: 5s;
+  animation-delay: 0.5s;
   animation-fill-mode: forwards;
 }
 @keyframes loader {
@@ -105,7 +147,7 @@
   background-image: linear-gradient(175deg, #9356DC, #FF79DA);
   color: transparent;
   animation-name: loader_text_visible;
-  animation-duration: 5s;
+  animation-duration: 0.5s;
   animation-timing-function: linear;
 }
 @keyframes loader_text_visible {
@@ -210,27 +252,6 @@
   }
 }
 
-/***** Section Location *****/
-.section__location {
-  display: grid;
-  grid-template-rows: 50px;
-  grid-template-columns: 16px 109px;
-  grid-gap: 17px;
-  justify-content: center;
-  align-items: center;
-  background-color: #EAEAEA;
-}
-
-.location__search input[type=text] {
-  height: 19px;
-  border-style: none;
-  background-color: #EAEAEA;
-}
-
-.fa-location-dot {
-  color: #353535;
-}
-
 /***** Section Exploration *****/
 .section__exploration {
   display: grid;
@@ -305,6 +326,27 @@
 .fonctionnement__icons {
   display: grid;
   justify-content: center;
+}
+
+/***** Section Location *****/
+.section__location {
+  display: grid;
+  grid-template-rows: 50px;
+  grid-template-columns: 16px 109px;
+  grid-gap: 17px;
+  justify-content: center;
+  align-items: center;
+  background-color: #EAEAEA;
+}
+
+.location__search input[type=text] {
+  height: 19px;
+  border-style: none;
+  background-color: #EAEAEA;
+}
+
+.fa-location-dot {
+  color: #353535;
 }
 
 /***** Section Restaurants *****/
@@ -394,8 +436,9 @@
 }
 
 .menu__title {
-  grid-template-columns: 1fr;
-  grid-gap: 0;
+  display: flex;
+  align-items: center;
+  padding: 32px 0 40px 0;
 }
 @media (min-width: 370px) {
   .menu__title {
@@ -514,17 +557,4 @@
   100% {
     right: 62.62px;
   }
-}
-
-body, h1, h2, h3, p {
-  margin: 0;
-}
-
-a {
-  color: white;
-  text-decoration: none;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
 }/*# sourceMappingURL=main.css.map */

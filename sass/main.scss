@@ -1,5 +1,15 @@
-@use 'abstracts';
-@use 'components';
-@use 'layout';
-@use 'pages';
-@use 'base';
+@import 'abstracts/variables';
+@import 'abstracts/mixin';
+@import 'base/reset';
+@import 'base/typography';
+@import 'components/button';
+@import 'components/heart';
+@import 'components/loader';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'pages/homepage_section_exploration';
+@import 'pages/homepage_section_fonctionnement';
+@import 'pages/homepage_section_location';
+@import 'pages/homepage_section_restaurants';
+@import 'pages/menu';
+

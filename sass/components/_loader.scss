@@ -1,20 +1,17 @@
-@use '../abstracts/variables';
-@use '../abstracts/mixin';
-
 /***** Loader *****/
 
 .loader__container{
     position: fixed;
     inset: 0;
     z-index: 1;             
-    background-color: variables.$background-color-first;
-    @include mixin.animation_loader;
+    background-color: $background-color-first;
+    @include animation_loader;
 }
 
 .loader__text__hidden, .loader__text__visible{
     font-size: 50px; 
     font-weight: 900; 
-    @include mixin.breakpoint(medium){
+    @include breakpoint(medium){
         font-size: 100px;
     }  
 }
@@ -38,7 +35,7 @@
 }
 
 .loader__text__visible{              
-    background-image: variables.$background-gradient;
+    background-image: $background-gradient;
     color: transparent;
-    @include mixin.animation_loader_text;
+    @include animation_loader_text;
 }

@@ -1,10 +1,8 @@
-@use '../abstracts/variables';
-
 body, h1, h2, h3, p{
     margin: 0;
 }
 
 a{
-    color: variables.$background-color-first;
+    color: $background-color-first;
     text-decoration: none;
 }

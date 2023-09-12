@@ -1,25 +1,52 @@
-@use '../abstracts/mixin';
-
 /***** Coeur Homepage *****/
 
-.fa-heart__restaurants{
+.fa-heart__1{
     position: absolute;
     right: 24px;
-    font-size: 25px;
+    font-size: 25px;      
+}
+
+.fa-heart__restaurants{ 
+    position: absolute;
+    right: 24px;
+    font-size: 25px;        
+    background-image: $background-gradient;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    transition: all .25s ease-in-out ;
+    opacity: 0;   
+}
+
+.fa-heart__restaurants:hover{
+    opacity: 1;
 }
 
 /***** Coeur Menu *****/
 
+.fa-heart__2{
+    display: grid;
+    grid-row-start: 1;
+    grid-column-end: 3;
+    margin: 0 auto;
+    font-size: 25px;    
+}
+
 .fa-heart__menu{
     display: grid;
+    grid-row-start: 1;
+    grid-column-end: 3;
+    right: 24px;
     margin: 0 auto;
     font-size: 25px;
+    background-image: $background-gradient;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    transition: all .25s ease-in-out ;
+    opacity: 0;   
 }
 
-/***** Animation Heart *****/ 
-
-.fa-heart__restaurants:hover, .fa-heart__menu:hover{        
-    @include mixin.animation_heart($animation_heart: true);
+.fa-heart__menu:hover{
+    opacity: 1;
 }
-
-
