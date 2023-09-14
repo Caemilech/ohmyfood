@@ -105,7 +105,7 @@ body {
   background-color: white;
   animation-name: loader;
   animation-duration: 0.1s;
-  animation-delay: 0.5s;
+  animation-delay: 6s;
   animation-fill-mode: forwards;
 }
 @keyframes loader {
@@ -147,7 +147,7 @@ body {
   background-image: linear-gradient(175deg, #9356DC, #FF79DA);
   color: transparent;
   animation-name: loader_text_visible;
-  animation-duration: 0.5s;
+  animation-duration: 5s;
   animation-timing-function: linear;
 }
 @keyframes loader_text_visible {

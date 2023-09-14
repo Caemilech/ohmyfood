@@ -34,7 +34,7 @@
 @mixin animation_loader{
     animation-name: loader;
     animation-duration: 0.1s;
-    animation-delay: 0.5s;
+    animation-delay: 6s;
     animation-fill-mode: forwards;
         
     @keyframes loader{
@@ -46,7 +46,7 @@
 
 @mixin animation_loader_text{
     animation-name: loader_text_visible;
-    animation-duration: 0.5s;
+    animation-duration: 5s;
     animation-timing-function: linear;
         
     @keyframes loader_text_visible{
